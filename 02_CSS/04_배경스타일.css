@@ -1,0 +1,54 @@
+/* background-color */
+#bc {
+  background-color: lightblue;
+}
+/* background-clip */
+.div-test {
+  background-color: peachpuff;
+  padding: 30px;
+  border: 5px dashed orange;
+  margin-bottom: 20px;
+}
+#bc1 {
+  /* content 영역 */
+  background-clip: content-box;
+}
+#bc2 {
+  /* content + padding 영역 */
+  background-clip: padding-box;
+}
+#bc3 {
+  /* content + padding + border 영역 */
+  background-clip: border-box;
+}
+#test {
+  width: 400px;
+  height: 300px;
+  border: 2px solid;
+
+  background-image: url("assets/bg.jpg");
+  /* background-size: cover - 사진 최대로 한뒤 나머지화면은 자름.
+     background-size: content -사진이 전체가 들어가게 함. 즉 비율 유지해서 다 넣음
+     background-size: 100px 등등 
+     size : 이미지 크기 조절 px, contain, cover 등 
+      */
+  background-size: contain;
+  background-repeat: no-repeat;
+  /*repeat: 반복 여부 설정 보통은 no-repeat을 씀
+    repeat-x : x축으로 반복 
+    repeat-y : y축으로 반복
+    no-repeat 
+    */
+  background-position: bottom;
+  /* position: center;
+     position: top left; => 두개로 써도 가능함 
+     배경위치를 아무데나 바꿀 수 있음 
+     position : 이미지 위치 설정 보통은 center로 함
+  */
+  background-attachment: fixed;
+  /* attachment: 스크롤 여부 확인 
+     attachment: scroll
+     attachment: fixed 
+     background : color image position/ size repeat attachment
+  */
+}
