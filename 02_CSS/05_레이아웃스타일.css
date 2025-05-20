@@ -1,4 +1,4 @@
-/* width, height */
+/* width(가로), height(높이) */
 /* px : 고정 크기 / % : 부모 기준 비율 / vw, vh : 뷰포트 너비, 높이 기준 비율 */
 #fixed-size {
   width: 300px;
@@ -106,4 +106,132 @@
   만약에 width값이랑 height값 둘다 150px이면 
   50% = 75px이 됨
   px로 안건들고 %로 해주면 width, height값 수정해도 번거롭게 px로 수정할 필요 없음 */
+}
+/* box-sizing */
+.box {
+  width: 300px;
+  height: 200px;
+  padding: 20px;
+  border: 10px solid;
+  background-color: lightcoral;
+  margin: 10px;
+}
+.box-content {
+  box-sizing: content-box;
+}
+.box-border {
+  box-sizing: border-box;
+}
+/* display */
+.display {
+  background-color: pink;
+  padding: 10px;
+  margin: 5px;
+  width: 150px;
+  height: 70px;
+}
+.display-inline {
+  display: inline;
+}
+.display-block {
+  display: block;
+}
+.display-inline-block {
+  display: inline-block;
+}
+/* float */
+.float {
+  float: left;
+  width: 80px;
+  height: 80px;
+  margin: 5px;
+  background: skyblue;
+  text-align: center;
+  line-height: 80px;
+}
+/* position */
+#outer {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  background: #f4f4f4;
+  overflow: auto;
+}
+.position-box {
+  width: 100px;
+  height: 100px;
+}
+#relative {
+  /* relative의 특징- 본인 현재 위치에서 이동 */
+  background: orange;
+  position: relative;
+  /* top, bottom, left, right */
+  bottom: 50px;
+  right: -50px;
+}
+#absolute {
+  /* absolute의 특징- 브라우저 맨위에 위치가 기준임 거기서 이동 */
+  /* absoulute는 어떤 영역안으로 넣고 싶을 때 부모의 기준으로 relaive를 넣은 뒤 처리한다 */
+  background: green;
+  position: absolute;
+  top: 20px;
+  left: 30px;
+}
+#fixed {
+  /* 스크롤하면 원래 위치에 고정된채 계속있음 */
+  background: red;
+  position: fixed;
+  right: 20px;
+  top: 30px;
+}
+#sticky {
+  background: blue;
+  position: sticky;
+  top: 0px;
+}
+/* visibility */
+.visibility {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  background: lightgray;
+  display: inline-block;
+}
+#vis2 {
+  visibility: visible;
+}
+#vis1 {
+  visibility: hidden;
+}
+#dis1 {
+  display: none;
+}
+#z-outer {
+  width: 200px;
+  height: 200px;
+  background: #ddd;
+  position: relative;
+}
+.z-index {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  opacity: 0.5;
+}
+
+#z-index1 {
+  background: red;
+  z-index: 1;
+  top: 20px;
+  left: 20px;
+}
+#z-index2 {
+  z-index: 2;
+  background: green;
+  top: 40px;
+  left: 40px;
+}
+#z-index3 {
+  background: blue;
+  z-index: 9999;
 }

@@ -1,0 +1,35 @@
+.display {
+  background-color: aqua;
+  padding: 100px;
+  margin: 2px;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+}
+.display-inline-block {
+  display: inline-block;
+}
+#display-inline-block1 {
+  background: red;
+}
+#display-inline-block2 {
+  background-color: aqua;
+}
+#outer {
+  background: rgb(238, 243, 238);
+  /* width: 1000px; => 틀림*/
+  overflow: auto;
+}
+.radius-box {
+  width: 80px;
+  height: 80px;
+  background: black;
+  color: white;
+  text-align: center;
+  line-height: 70px;
+  margin-bottom: 10px;
+}
+.radius1 {
+  border-radius: 50%;
+  right: 10px;
+}
