@@ -20,7 +20,7 @@
   /* width: 1000px; => 틀림*/
   overflow: auto;
 }
-.radius-box {
+.top-button {
   width: 80px;
   height: 80px;
   background: black;
@@ -28,8 +28,5 @@
   text-align: center;
   line-height: 70px;
   margin-bottom: 10px;
-}
-.radius1 {
   border-radius: 50%;
-  right: 10px;
 }
