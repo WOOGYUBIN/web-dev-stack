@@ -1,0 +1,42 @@
+header {
+  position: fixed;
+  display: flex;
+}
+header nav {
+  display: flex;
+}
+header nav a {
+  display: inline-block;
+  align-items: center;
+  padding: 5px;
+  color: white;
+  padding: 100px;
+}
+header h1 {
+  font-size: 4rem;
+  color: white;
+}
+#test {
+  width: 300px;
+  height: 100vh;
+  background-image: url(assets/background.jpg);
+  background-size: content;
+  background-position: center;
+}
+section h1 {
+  height: 4vh;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  font-size: 1.5rem;
+  font-style: bold;
+}
+.center-box {
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  margin: auto;
+}
+section p {
+  padding: 175px;
+}

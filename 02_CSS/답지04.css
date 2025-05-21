@@ -1,0 +1,62 @@
+/* 변수 쓰기
+:root {--main-width:  px)
+이렇게 쓰고 각자 값을 같이 하고 싶은 곳에 var(--main-width)라고 쓰기 */
+:root {
+  --main-width: 240px;
+  --main-color: rgba(214, 130, 130, 0.5);
+}
+header {
+  position: fixed;
+  background-color: black;
+  width: var(--main-width);
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--main-color);
+  background-image: url(assets/background.jpg);
+  background-blend-mode: color;
+  background-position: center;
+  background-size: cover;
+}
+/* var(--main-width)+ px 이거를 복사해서
+calc에 붙여넣으면 자동 계산이 됨
+main의 글을 좀 더 띄우고 싶을 때 + px해줘야 함 */
+header h1 {
+  font-size: 4rem;
+  padding-top: 20px;
+  text-decoration: underline;
+  padding-bottom: 5px;
+  padding-inline: 10px;
+  border-bottom: 3px solid white;
+}
+header nav {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  gap: 10px;
+}
+header nav a {
+  text-decoration: underline;
+}
+main {
+  padding: 20px;
+  padding-left: calc(var(--main-width) + 10px);
+  text-align: center;
+}
+main h2,
+main p {
+  text-align: left;
+}
+main h2 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+main img {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
