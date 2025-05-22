@@ -58,6 +58,7 @@
       console.log(`내 취미는 ${hobby}입니다.`); //템플릿임
 
       const escape = '내 이름은 \n"문채은"입니다.'; // \이거를 이스케이프문자라고 함 \n은 줄바꿈을 의미함
+      //   ('내 이름은 \n"\문채은"입니다.');
       console.log(escape);
     </script>
     <h2>4. 숫자</h2>
@@ -138,7 +139,7 @@
       console.log(!!true); // true (true가 아닌게 아니야! => true맞아)
 
       console.log("JavaScript" && 12345);
-      console.log(null || "JS"); //null값은 false임  ||이게 "또는"이라는 의미니까 왼쪽값이 false라도 뒤에 값을 계산함
+      console.log(null || "JS"); //null값은 false임  ||이게 "또는"이라는 의미니까 왼쪽값이 false라도 뒤에 값이 맞으면 그 값을 계산함
     </script>
   </body>
 </html>
