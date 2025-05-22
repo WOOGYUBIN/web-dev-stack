@@ -12,7 +12,7 @@
         아이디가 'admin'이면 '관리자입니다'를 출력하시오.
         <script>
           // Q1:
-          let id = "a";
+          const id = "a";
           if (id === "admin") {
             console.log("관리자입니다.");
           } else {
@@ -29,7 +29,7 @@
           let 실기점수 = 70;
           if (필기점수 >= 80 && 실기점수 >= 80) {
             console.log("합격");
-          } else if (필기점수 != 80 || 실기점수 != 80) {
+          } else {
             console.log("불합격");
           }
         </script>
@@ -39,6 +39,12 @@
         정수가 10과 20 사이인지 판별하시오.
         <script>
           // Q3: 여기에 코드를 작성하세요
+          let 정수 = 18;
+          if (20 > 정수 && 정수 < 10) {
+            console.log("10과 20사이임");
+          } else {
+            console.log("10과 20사이가 아님");
+          }
         </script>
       </li>
 
@@ -62,17 +68,16 @@
         <script>
           // Q5: 여기에 코드를 작성하세요
           let 월 = 3;
-          if ("5" >= 월 && 월 >= "3") {
+          if (5 >= 월 && 월 >= 3) {
             console.log("봄");
-          } else if (8 >= 월 >= 6) {
+          } else if (8 >= 월 && 월 >= 6) {
             console.log("여름");
-          } else if (11 >= 월 >= 9) {
+          } else if (11 >= 월 && 월 >= 9) {
             console.log("가을");
-          } else if ("12" == 월 || 월 <= "2") {
+          } else {
             console.log("겨울");
           }
         </script>
-        ---------보류
       </li>
 
       <li>
@@ -80,6 +85,18 @@
         F)
         <script>
           // Q6: 여기에 코드를 작성하세요
+          const score = 50;
+          if (scsore > 90) {
+            console.log("A");
+          } else if (score > 80) {
+            console.log("B");
+          } else if (score > 70) {
+            console.log("C");
+          } else if (score > 60) {
+            console.log("D");
+          } else {
+            console.log("F");
+          }
         </script>
       </li>
 
@@ -88,9 +105,10 @@
         <script>
           // Q7: 여기에 코드를 작성하세요
           let 요일 = 4;
-          if(요일 === "1") {
-            console.log("월요일")}
-           else if()
+          switch (요일) {
+            case 1:
+              console.log("월요일");
+              break;
             case 2:
               console.log("화요일");
               break;
@@ -108,6 +126,9 @@
               break;
             case 7:
               console.log("일요일");
+              break;
+            default:
+          }
         </script>
       </li>
 
@@ -122,6 +143,15 @@
         로그인 정보(id/pw)를 비교하여 로그인 성공 여부를 출력하시오.
         <script>
           // Q9: 여기에 코드를 작성하세요
+          const 아이디 = "user1";
+          const 비번번 = "1234";
+          if (아이디 === "user1" && 비번번 === "1234") {
+            console.log("로그인 성공");
+          } else if (아이디 !== user1) {
+            console.log("아이디 불일치");
+          } else if (비번 !== 1234) {
+            console.log("비밀번호 불일치");
+          }
         </script>
       </li>
       <li>
