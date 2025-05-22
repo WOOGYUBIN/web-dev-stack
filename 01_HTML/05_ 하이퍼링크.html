@@ -6,26 +6,30 @@
     <title>하이퍼링크</title>
   </head>
   <body>
-    <!-- a 태그 : 다른 페이지나 리소스를 연결하는 하이퍼링크 
-        - href : 이동할 주소  
-        - target= "_blank" : 새 창 열기
+    <!-- <a> 태그 : 다른 페이지나 리소스를 연결하는 하이퍼링크 
+        - href : 이동할 주소 ex. url주소  
+        - target= "_blank" : 새 창 열기 (이거를 누르면 해당 페이지에서 열리는게 아니라 새로운 페이지에서 열림)
     -->
     <h2>외부 페이지 링크</h2>
     <a href="https://www.google.com/" target="_blank">구글 페이지로 이동</a>
 
     <h2>내부 페이지 링크</h2>
+    <!-- li>a 이러면 <li><a>태그가 나옴 -->
     <ul>
       <li><a href="./02_ 텍스트태그.html">텍스트태그</a></li>
     </ul>
 
     <h2>이미지 링크</h2>
     <a href="https://www.naver.com/" target="_blank">
-      <img src="assets/naver.png" alt=""
-    /></a>
+      <img src="assets/naver.png" alt="" />
+    </a>
 
     <h2>같은 페이지 내 이동</h2>
 
     <!-- ul>(1i>a)*3 -->
+    <!-- ctrl + space 누르면 파란색이 뜸 -->
+    <!-- #을 쓰면 샵뒤에 나온애를 선택한다는 뜻임 
+         그래서 id는 #이라는거를 기억하기!-->
     <ul>
       <li><a href="#test1">테스트1</a></li>
       <li><a href="#test2">테스트2</a></li>
@@ -33,6 +37,7 @@
     </ul>
 
     <!-- h3{테스트$}*3 -->
+    <!-- id= "이름" 즉, id 는 이름을 부여하는 애임 /  -->
     <h3 id="test1">테스트1</h3>
     <p>테스트 1 영역입니다.</p>
 
