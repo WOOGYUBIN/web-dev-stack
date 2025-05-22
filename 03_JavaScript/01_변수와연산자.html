@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>변수와 연산자</title>
+  </head>
+  <body>
+    <h1>변수와 연산자</h1>
+    <h2>1. var, let, const</h2>
+    <script>
+      // 변수 : 값을 담는 공간
+      // =의 의미가  오른쪽에 있는 값(1)을 왼쪽으로 담았다는 뜻
+      // 변수명 = 값
+      // 자바스크립트는 '' 표나 "" 둘다 쓸 수 있음
+      // 변수는 재활당이 가능함 ex. 1에서 변경으로 변환
+
+      //   var : 일반 변수 선언(예전버전임. 가능하면 사용X). 변수라는 값을 지칭하는 거를 var라고 함
+      var oldVar = 1;
+      oldVar = "변경";
+      console.log(oldVar);
+
+      //   let : 일반 변수 선언(가끔 사용함) ex. 첨에 성예찬 -> 나중에 이상엽으로 변환가능
+      let nickname = "성예찬";
+      nickname = "이상엽";
+      console.log(nickname);
+
+      //  const : 상수 선언(자주 사용함) 즉, 애초부터 해당하는 값을 지정해버리면 그 뒤에 값을 변경 못함 ex. 조규상에서 최다인으로 변경하면 에러뜸
+      const name = "조규상";
+      //   name = "최다인";
+      console.log(name);
+    </script>
+    <!-- 스크립 태그막아도 script들 마다 서로 공유됨  -->
+
+    <h2>2. 자료형과 typeof</h2>
+    <script>
+      const userId = "최다인"; // 문자(최,다,인), 문자열(string)(문자들 ex.최다인)
+      const age = 15; //숫자(number)- "" 따옴표 필요없음
+      const check = true; //true, false- 논리형임 -boolean이라고도 함
+      let unknown; //값을 안 넣은거를 변수 선언만 했다고 표현. undefined -자유형. 값이 정의되지 않음이라는 뜻
+      let isNone = null; //null- 값이 없음을 뜻함
+      console.log(typeof userId);
+      console.log(age);
+      console.log(check);
+      console.log(unknown);
+      console.log(isNone);
+
+      let test = "test";
+      console.log(typeof test);
+      test = 123;
+      test = false;
+      console.log(typeof test);
+    </script>
+    <h2>3. 문자열 & 템플릿 리터럴</h2>
+    <script>
+      const hobby = "게임";
+      console.log("내 취미는 " + hobby + "입니다."); // =console.log(`내 취미는 ${hobby}입니다.`); 같음 +(연산자)를 쓸거냐 ${}를 쓸거냐 편한대로 선택해서 쓰기
+      console.log(`내 취미는 ${hobby}입니다.`); //템플릿임
+
+      const escape = '내 이름은 \n"문채은"입니다.'; // \이거를 이스케이프문자라고 함 \n은 줄바꿈을 의미함
+      console.log(escape);
+    </script>
+    <h2>4. 숫자</h2>
+    <script>
+      const num1 = 10;
+      const num2 = 3;
+      console.log("더하기 : ", num1 + num2); //13
+      console.log("빼기 :", num1 - num2); //7
+      console.log("곱하기 :", num1 * num2); //30
+      console.log("나누기 :", num1 / num2); //3.333333...
+      console.log("나머지 :", num1 % num2); //1 (10에서 3을 나누면 결과값이 1이 남음)
+      console.log("제곱 :", num1 ** num2); //1000
+
+      // 문자열 -> 숫자로 바꿀 경우
+      console.log(Number("100")); // Number("")
+      console.log(Number("Hello")); //Hello는 숫자(numeber)가 아니기 때문에 잘못입력했다는 NaN이 뜸
+
+      // 숫자 -> 문자열로 바꿀 경우
+      console.log(String(300));
+
+      // 소수점 제거 -> 정수로 만들 경우
+      console.log(parseInt(3.9)); // 3 -> Int는 정수를 의미. parseInt는 소수점을 제거함
+
+      // 문자열 -> 실수로 바꿀 경우
+      console.log(parseFloat("4.2"));
+    </script>
+
+    <h2>5. Boolean과 비교 연산자</h2>
+    <script>
+      console.log(true);
+      console.log(false);
+
+      //   Boolean 변환
+      console.log(Boolean("World")); // 어떠한 문자라도 있으면 true
+      console.log(Boolean("")); // ""안에 문자가 하나도 없으면 false
+
+      console.log(Boolean(0)); // 0만 false
+      console.log(Boolean(1)); // 0을 제외한 값은 true
+
+      const a = 100; //숫자
+      const b = "100"; //문자
+      //   100이랑 100이랑 같아? 같네 => true
+      console.log(a == b); //== 같다는 뜻임. a와 b가 같으니까 true가 나옴
+      //   숫자 100이랑 문자 100이랑 같니? 아니네 => false
+      console.log(a === b); // === type까지 봄 (문자형인지 숫자형인지 까지 본다는 말). 자바스크립트에서는 이걸 씀
+      console.log(a === Number(b)); // true가 나옴
+
+      //   !=, !== : 같지 않니?
+      console.log(a != b); // false 나옴
+      console.log(a !== b); //true 나옴 (숫자100이랑 문자 100이랑 같지 않다)
+
+      const c = 200;
+      console.log(a < c); // true가 나옴
+      console.log(a > c); // false가 나옴
+      console.log(a >= c); // false
+      console.log(a <= c); // true
+
+      //   연습
+      console.log("0" == 0); //true
+      console.log("0" === 0); //false
+      console.log(Boolean("")); //false
+      console.log(Boolean("0")); //true
+    </script>
+
+    <h2>6. 논리 연산자</h2>
+    <script>
+      const x = 10;
+      const y = 20;
+
+      //   and : (왼쪽과 오른쪽)둘 다 true이면 true
+      //   && : 그리고 --(왼쪽과 오른쪽 둘다 봄) 앞(왼쪽)이 true면 뒤에 거를 계산함. 앞(왼쪽)이 false면 뒤에 거는 쳐다보지도 않고 계산안함
+      console.log(x < 15 && y > 10); //true
+      console.log(x > 15 && y > 10); //false
+      //   or : (왼쪽, 오른쪽 중) 하나만 true여도 true
+      console.log(x < 15 || y > 10); //true
+      //   not : 부정  (!를 붙이면 반대의미를 가짐)
+      console.log(!false); //true (false가 아니야! 라고 부정하기 때문에)
+      console.log(!!true); // true (true가 아닌게 아니야! => true맞아)
+
+      console.log("JavaScript" && 12345);
+      console.log(null || "JS"); //null값은 false임  ||이게 "또는"이라는 의미니까 왼쪽값이 false라도 뒤에 값을 계산함
+    </script>
+  </body>
+</html>
