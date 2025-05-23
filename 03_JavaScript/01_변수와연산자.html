@@ -37,8 +37,8 @@
       const userId = "최다인"; // 문자(최,다,인), 문자열(string)(문자들 ex.최다인)
       const age = 15; //숫자(number)- "" 따옴표 필요없음
       const check = true; //true, false- 논리형임 -boolean이라고도 함
-      let unknown; //값을 안 넣은거를 변수 선언만 했다고 표현. undefined -자유형. 값이 정의되지 않음이라는 뜻
-      let isNone = null; //null- 값이 없음을 뜻함
+      let unknown; //값을 안 넣은거를 변수 선언만 했다고 표현. undefined -자유형. 값이 정의되지 않음
+      let isNone = null; //null- 값이 없음
       console.log(typeof userId);
       console.log(age);
       console.log(check);
@@ -98,11 +98,11 @@
       console.log(Boolean(0)); // 0만 false
       console.log(Boolean(1)); // 0을 제외한 값은 true
 
-      const a = 100; //숫자
-      const b = "100"; //문자
+      const a = 100; //숫자형(Number)
+      const b = "100"; //문자열(String)
       //   100이랑 100이랑 같아? 같네 => true
       console.log(a == b); //== 같다는 뜻임. a와 b가 같으니까 true가 나옴
-      //   숫자 100이랑 문자 100이랑 같니? 아니네 => false
+      //   숫자 100이랑 문자 100이랑 같니? 아니지 => false
       console.log(a === b); // === type까지 봄 (문자형인지 숫자형인지 까지 본다는 말). 자바스크립트에서는 이걸 씀
       console.log(a === Number(b)); // true가 나옴
 
