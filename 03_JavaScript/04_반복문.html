@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반복문</title>
+  </head>
+  <body>
+    <h1>반복문</h1>
+    <script>
+      /*
+            for(초기값;;조건식;증감연산자) {
+            반복문 조건에 해당되는만큼 실행
+            }
+        */
+      //    1 ~ 10까지 출력
+      //   i++는 i+1 와 같음
+      for (let i = 1; i <= 10; i++) {
+        console.log(i);
+      }
+    </script>
+    <h2>1. 전위/후위 연산자</h2>
+    <script>
+      // 전위 연산자(++n, --n) : 계산하고 출력
+      // 후위 연산자(n++, n--) : 출력하고 계산
+
+      let num = 1;
+      num = num + 1; // 2 (앞에 num과 뒤에 num은 같음)
+      // num = num + 1 는 ++num, num++이랑 같음
+      // num = num - 1 은 --num, num--와 같음
+      console.log(++num); // 3
+      console.log(--num); // 2
+      console.log(num++); // 2, num = 3
+      console.log(num); // 3
+      console.log(num--); // 3, num = 2
+      console.log(num); // 2
+    </script>
+
+    <h2>2. 복합대입연산자</h2>
+    <script>
+      num = num + 3; // 오른쪽 값이 왼쪽으로 넘어가서 계산.
+      console.log(num); // 5
+      num += 3; // num = num + 3; 과 같음
+      console.log(num); // 8
+      num -= 2; // num = num - 2; 와 같음
+      console.log(num); // 6
+    </script>
+
+    <h2>3. 배열과 for문</h2>
+    <script>
+      const movies = ["야당", "파과", "미션 임파서블", "플립", "릴로 & 스티치"];
+    </script>
+  </body>
+</html>
