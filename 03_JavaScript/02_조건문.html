@@ -89,29 +89,27 @@
     <script>
             // break;를 걸어야지 앞에 조건이 맞을 경우 값이 도출됨
             /*
-              switch(데이터값-문자 or 숫자가 들어감){
-               case 조건A(=값=데이터):
-                      조건A가 true인 경우 실행
-                      break;
-               case 조건B(=값=데이터):
-                      조건B가 true인 경우 실행
-                       break;
-               default:
-                    (앞에 있는) 모든 조건이 false
-              }  */
+                    switch(데이터값-문자 or 숫자가 들어감){
+                     case 조건A(=값=데이터):
+                            조건A가 true인 경우 실행
+                            break;
+                     case 조건B(=값=데이터):
+                            조건B가 true인 경우 실행
+                             break;
+                     default:
+                          (앞에 있는) 모든 조건이 false
+                    }  */
             const number = prompt("숫자를 입력하세요");
             //  조건문 문제) number 값이 짝수이면 "짝수", 홀수이면 "홀수", 그게 아니면 "숫자가 아닙니다".
 
             /* if(number 값이 짝수이면 -> number 값을 2로 나눴을 때 나머지가 0인 경우) {
-                   "짝수"
-               } else if (number 값이 홀수이면) {
-                   "홀수"}
-                   else {
-                    "숫자가 아닙니다."
-                   } */
+                         "짝수"
+                     } else if (number 값이 홀수이면-> number값을 2로 나눴을 때 나머지가 1인 경우) {
+                         "홀수"}
+                         else {
+                          "숫자가 아닙니다."
+                         } */
 
-            //  number값이 홀수이면 number % 2 !== 0 나머지가 2로 나눴을때 1인 경우
-      --------------------------------------4:39:47 -----
             if (number % 2 === 0) {
               console.log("짝수");
             } else if (number % 2 === 1) {
@@ -119,7 +117,7 @@
             } else {
               console.log("숫자가 아닙니다.");
             }
-
+      -----------4:43:46 --------
             switch (number % 2) {
               case 0:
                 console.log("짝수");
