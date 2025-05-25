@@ -9,15 +9,18 @@
     <h1>조건문</h1>
     <h2>1. if / else</h2>
     <script>
-      /* 여러 줄일 때*/
+      /* 여러 줄 주석일 때*/
+      // 한줄 주석일 때
+
       /*
             if(조건) {
                  조건이 true 인 경우
             } else {
                  조건이 false 경우
             }
+
+             else(생략 가능) : 그렇지 않으면 이라는 뜻임. else에는 조건이 안걸림 
        */
-      //   else(생략가능함) : 그렇지 않으면 이라는 뜻임.
 
       let age = 18;
       if (age > 19) {
@@ -28,26 +31,40 @@
 
       // 삼항 연산자 : 조건 ? 조건이 true : 조건이 false
       age = 20;
-      const result = age > 19 ? "성인" : "미성년자";
+      const result = age > 19 ? "성인" : "미성년자"; // 해당조건이 true이면 뒤에 ?가 나옴. : ->이게 else(그게 아니면)를 뜻함
       console.log(result);
     </script>
 
     <h2>2. else if</h2>
     <script>
+      // 조건이 하나 이상인 경우에 else if를 씀
       /*
         if(조건 A) {
            조건 A가 true
         } else if(조건 B) {
-           (조건 A가 flase이면서) 조건 B가 true
+           (조건 A가 false이면서) 조건 B가 true
         } else {
-            모든 조건이 false
-        }
-        */
+            (앞에 나왔던) 모든 조건이 false
+        } */
 
-      // 조건문) 20세 이상이면 성인, 14세 이상이면 청소년, 8세 이상이면 어린이, 그 외에는 유아
-      //   age = prompt ("나이를 입력해주세요") => 사이트에서 나이 값을 입력하게 함
+      // 조건문 문제) 20세 이상이면 성인, 14세 이상이면 청소년, 8세 이상이면 어린이, 그 외에는 유아
+      //   age = prompt ("나이를 입력해주세요") => 사이트에서 나이 값을 입력하게 함15
 
-      //   방법1
+      //방법1
+      age = prompt("나이를 입력해주세요");
+      if (age >= 20) {
+        console.log("성인");
+      } else if (age >= 14) {
+        //  20세 미만이면서 14세 이상인 경우
+        console.log("청소년");
+      } else if (age >= 8) {
+        // 14세 미만이면서 8세 이상인 경우
+        console.log("어린이");
+      } else {
+        console.log("유아");
+      }
+
+      //방법2
       let result2;
       if (age >= 20) {
         result2 = "성인";
@@ -61,70 +78,58 @@
         result2 = "유아";
       }
       console.log(result2);
-      console.log(
-        age >= 20 ? "성인" : age >= 14 ? "청소년" : age >= 8 ? "어린이" : "유아"
-      );
 
-      // 방법2
-      age = prompt("나이를 입력해주세요");
-      if (age >= 20) {
-        console.log("성인");
-      } else if (age >= 14) {
-        //  20세 미만이면서 14세 이상인 경우
-        console.log("청소년");
-      } else if (age >= 8) {
-        // 14세 미만이면서 8세 이상인 경우
-        console.log("어린이");
-      } else {
-        console.log("유아");
-      }
+      //방법3 (삼항연산자)
+      console.log(
+        age >= 20 ? "성인" : age > 14 ? "청소년" : age >= 8 ? "어린이" : "유아"
+      );
     </script>
 
     <h2>3. switch</h2>
     <script>
-      // break;를 걸어야지 앞에 조건이 맞을 경우 값이 도출됨
-      /*
-        switch(데이터값-문자 or 숫자) {
-         case 조건A(값):
-                조건A가 true인 경우 실행
+            // break;를 걸어야지 앞에 조건이 맞을 경우 값이 도출됨
+            /*
+              switch(데이터값-문자 or 숫자가 들어감){
+               case 조건A(=값=데이터):
+                      조건A가 true인 경우 실행
+                      break;
+               case 조건B(=값=데이터):
+                      조건B가 true인 경우 실행
+                       break;
+               default:
+                    (앞에 있는) 모든 조건이 false
+              }  */
+            const number = prompt("숫자를 입력하세요");
+            //  조건문 문제) number 값이 짝수이면 "짝수", 홀수이면 "홀수", 그게 아니면 "숫자가 아닙니다".
+
+            /* if(number 값이 짝수이면 -> number 값을 2로 나눴을 때 나머지가 0인 경우) {
+                   "짝수"
+               } else if (number 값이 홀수이면) {
+                   "홀수"}
+                   else {
+                    "숫자가 아닙니다."
+                   } */
+
+            //  number값이 홀수이면 number % 2 !== 0 나머지가 2로 나눴을때 1인 경우
+      --------------------------------------4:39:47 -----
+            if (number % 2 === 0) {
+              console.log("짝수");
+            } else if (number % 2 === 1) {
+              console.log("홀수");
+            } else {
+              console.log("숫자가 아닙니다.");
+            }
+
+            switch (number % 2) {
+              case 0:
+                console.log("짝수");
                 break;
-         case 조건B(값):
-                조건B가 true인 경우 실행
-                 break;
-         default:
-              모든 조건이 false
-        }
-        */
-      const number = prompt("숫자를 입력하세요");
-      //  조건문) number 값이 짝수이면 "짝수", 홀수이면 "홀수", 그게 아니면 "숫자가 아닙니다".
-      /* if(number 값이 짝수이면 -> number 값을 2로 나눴을 때 나머지가 0인 경우) {
-             "짝수"
-         } else if (number 값이 홀수이면) {
-             "홀수"}
-             else {
-              "숫자가 아닙니다."
-             } */
-
-      //  number값이 홀수이면 number % 2 !== 0 나머지가 2로 나눴을때 1인 경우
-
-      if (number % 2 === 0) {
-        console.log("짝수");
-      } else if (number % 2 === 1) {
-        console.log("홀수");
-      } else {
-        console.log("숫자가 아닙니다.");
-      }
-
-      switch (number % 2) {
-        case 0:
-          console.log("짝수");
-          break;
-        case 1:
-          console.log("홀수");
-          break;
-        default:
-          console.log("숫자가 아닙니다.");
-      }
+              case 1:
+                console.log("홀수");
+                break;
+              default:
+                console.log("숫자가 아닙니다.");
+            }
     </script>
     <h2>4. 중첩 if</h2>
     <script>

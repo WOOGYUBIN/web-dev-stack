@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind css</title>
+    <!-- Tailwind 홈페이지에서 Play CDN은 설치 없이, 그냥 코딩 한 줄만 HTML에 붙이면 바로 Tailwind CSS를 쓸 수 있음 -->
+    <!-- script : HTML 문서에 JavaScript 파일을 연결하거나 실행시키는 태그  
+         src="..." 속성으로 외부 JS 파일을 불러올 수도 있음
+         즉, 너는 Tailwind를 설치하지 않고, 그냥 링크만 연결해서 바로 쓰는 형태를 사용하는 거야 (Play CDN 방식).-->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <!-- bg : background color -->
+    <!-- class: HTML에서 "이 요소에 어떤 스타일(디자인)을 적용할지 이름을 붙여주는 것"
+    → 마치 옷에 라벨을 붙이듯이, 태그에 이름표를 붙이는 것. 
+    ex) <p class="highlight">이 문장은 강조됨</p> -->
+    <h1 class="text-3xl font-bold bg-gray-400 text-purple-800 underline">
+      Hello world!
+    </h1>
+    <!--py, px: 여백(padding)을 설정하는 클래스 
+    p → 모든 방향에 패딩
+    pt → padding-top (위쪽)
+    pb → padding-bottom (아래쪽)
+    pl → padding-left (왼쪽)
+    pr → padding-right (오른쪽)
+    py → padding y축 방향 (위+아래)
+    px → padding x축 방향 (좌+우)
+    -->
+    <!-- hover : 사용자가 마우스를 요소 위에 올렸을 때 발생하는 상태(state) -->
+    <button
+      class="bg-blue-500 rounded text-white py-10 px-4 font-bold hover:bg-yellow-600"
+    >
+      버튼
+    </button>
+    <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white p-4">
+      <div class="font-bold text-lg mb-2">타이틀</div>
+      <p class="text-orange-700 text-base">카드 본문</p>
+    </div>
+
+    <!--https://tailwindcss.com/docs/grid-template-columns 
+    여기 홈페이지에 드가서 여러 css들 중에서 원하는거 복붙하면 됨 -->
+    <div class="grid grid-cols-4 gap-4">
+      <div>01</div>
+      <!-- ... -->
+      <div>09</div>
+    </div>
+  </body>
+</html>

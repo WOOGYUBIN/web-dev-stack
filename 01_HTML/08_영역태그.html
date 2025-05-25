@@ -4,38 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>영역태그</title>
+    <!-- style태그는 보통 head태그 안에 있음 -->
     <style>
       div,
       span {
         border: 1px solid;
-        /* display: inline or div (하면 지정해놓은 표가 싹 다 바뀜) */
+        /* span {}안에 display : block 이라고 하면 span도 div처럼 표가 다 같이 block요소로 한줄 전체를 차지하는 
+        모습이 나옴 */
+        /* display: inline or block으로 하면 지정해놓은 표가 싹 다 바뀜) */
       }
     </style>
   </head>
   <body>
     <h1>div와 span</h1>
+    <!-- div만 색깔을 쓰고 싶을 때는 span 태그를 써서 영역을 잡아버리고 => 네모 박스안에 div가 생김
+      그 다음 style을 써서 색깔을 달리하면 됨 -->
     <p>
       <span style="color: red">div</span>와 span은 HTML에서 가장 기본적인
       레이아웃
       <br />
-      - div : block 요소 (한 줄 전체를 차지, width: 100%)
+      - div : block 요소 (한 줄 전체를 차지, width: 100%), 알아서 줄바꿈 해줌
       <br />
-      - span : inline 요소 (컨텐츠만큼만 차지)
+      - span : inline 요소 (컨텐츠만큼만 차지), 알아서 줄바꿈 안해줌
     </p>
     <h2>1. 줄바꿈</h2>
     <!-- div{$번째 div 영역}*3 -->
     <div>1번째 div 영역</div>
     <div>2번째 div 영역</div>
     <div>3번째 div 영역</div>
+
     <!-- span{$번째 span 영역}*3 -->
     <span>1번째 span 영역</span>
     <span>2번째 span 영역</span>
     <span>3번째 span 영역</span>
+
     <h2>2. 영역 지정 방식</h2>
+    <h3>div</h3>
     <div>
       동해물과 백두산이 마르고 닳도록 <br />
       하나님이 보우하사 우리나라 만세
     </div>
+
     <h3>span</h3>
     <span>
       동해물과 백두산이 마르고 닳도록 <br />

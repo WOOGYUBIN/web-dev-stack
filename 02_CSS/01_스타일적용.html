@@ -4,16 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>스타일 적용</title>
+    <!-- style 태그안에 선택자를 div로 넣고 중괄호안에 속성인 color: 값인 blue를 넣음
+     이런식으로 하는게 css 문법임
+     <body> 태그안에 내가 선택하고자 하는 태그를 선택하면 그게 바로 선택자임 
+     html 같은 경우는 해당 태그안에 직접 style 넣고 색을 입힐 수 있음 -->
     <style>
       div {
         color: blue;
       }
     </style>
+    <!-- html file이 .css file과 연결해서 스타일을 꾸미려면 link 태그를 써야함
+    rel(realtionship): 현재 HTML 문서와 링크된 문서(또는 리소스) 사이의 관계
+    href (hypertext reference): 연결할 파일의 경로(주소) 
+    -->
     <link rel="stylesheet" href="01_스타일적용.css" />
   </head>
   <body>
+    <!-- CSS (Cascading Style Sheet)
+     부모태그에 스타일을 주면 몇몇 자식태그들에게도 물려주어 적용됨
+     cascading - 내려간다 
+     sheet - 문서
+     -->
     <h1 style="color: red">Cascading Style Sheet</h1>
-    <div>웹 페이지의 디자인을 위한 언어</div>
-    <p>선택자 { 속성: 값;}</p>
+    <div>CSS란? 웹 페이지의 디자인을 위한 언어</div>
+    <p>선택자 { 속성: 값; }</p>
+    <!-- 꾸밀애들(style)을 나눠서 style대로 꾸미기 위해서 
+     .css라는 file을 따로 만듦 -->
   </body>
 </html>

@@ -10,11 +10,10 @@
         사용자가 페이지에 값을 입력하고 전송하는 모든 영역
         모든 입력 양식은 <form> 태그 내부에 작성한다.
         대부분 <input> 태그의 type 속성으로 구분
-        입력값 구분을 위해 name 속성(=서버에 전송할 키값) 필수 
+        입력값 구분을 위해 name 속성(=서버에 전송할 값) 필수 
         <textarea>, <select>, <button>
     -->
     <h1>폼</h1>
-
     <!-- 
             input의 type 속성들
             - text : 한 줄 입력
@@ -27,43 +26,60 @@
     <form action="" method="get">
       <!-- 
         - action : 데이터를 전달할 서버 주소 
-        - method : 데이터 전송 방식 (GET or POST) 
+        - method : 데이터 전송 방식 (GET or POST 두가지 방식이 있음) 
           - GET : URL에 데이터 노출, 빠르고 간단, 보안 낮음(검색, 조회 등에 사용)
           - POST : 데이터가 숨겨져서 저장, 보안 높음 (회원가입, 로그인 등에 사용)
-        -->
+          - https://www.~ ?q=검색내용 적혀있는데 
+            url뒤에 보면 검색내용이 q에 담아서 해당 사이트로 보낸다  
+            ?(물음표)뒤에를 파라미터라고 함 q는 key라고 보면 됨 q뒤의 내용은 value(값)이라고 보면 됨
+            name을 key라고 보면 됨. (헷갈리지 말기. id가 name임) -->
       검색 : <input type="text" name="keyword" />
       <input type="submit" value="검색" />
     </form>
 
     <h2>로그인</h2>
+    <!-- placeholder을 쓰면 칸안에 글자가 투명색으로 생김 
+     required : 칸을 작성안하면 무조건 필수적으로 입력하라고 뜸. -->
     <form action="" method="post">
       아이디 :
-      <input type="text" name="id" placeholder="아이디" required /><br />
+      <input type="text" name="id" placeholder="아이디 입력" required /><br />
       비밀번호 :
-      <input type="password" name="pwd" placeholder="비밀번호" /><br />
+      <!-- 비밀번호는 입력할때 점점점으로 나오기 때문에 type에다가 text가 아니라 password에다가 써야함 -->
+      <input type="password" name="pwd" placeholder="비밀번호 입력" /><br />
       <input type="submit" />
       <input type="reset" />
       <input type="button" value="확인" onclick="alert('버튼 틀릭!')" />
+      <!-- value값에 확인만 넣으면 아무런 효과가 없다. onclick 쓰고 자바스크립트용 함수인 alert를 쓴다 -->
     </form>
 
     <h2>라디오 & 체크박스</h2>
-    <!-- radio : 단일 선택, checkbox : 복수 선택 -->
+    <!-- radio : 단일 선택, (동그라미 체크표시) / checkbox : 복수 선택 (네모 체크표시)
+         fieldset은 꾸미는 용도로 쓰임-->
+    <!-- name은 남자, 여자 성별을 묶는 정도로만 쓰인다 뭔가를 묶을 땐 쓴다고만 알기 -->
     <form action="">
       <fieldset>
         <legend>성별</legend>
-        <label for="">
-          <input type="radio" name="gender" value="남자" id="man" checked />
-          남자</label
-        >
+        <input type="radio" name="gender" value="남자" id="man" checked />
+        <label for="man">남자</label>
         <br />
+        <!-- checked 박스를 미리 써두면 새로고침했을때 이미 남자가 체크된 상태로 보여짐 -->
         <input type="radio" name="gender" value="여자" />
         <label for="woman">여자</label>
       </fieldset>
       <!-- 
-        1. label의 for 값은 input의 id랑 일치시켜야 함
+        1. label for 값은 input의 id 값이랑 일치시켜야 함
+        id랑 label for랑 연결/ value랑 name이랑 연결
+        동그라미 체크표시가 "남자"라고 묶는것을 label로 묶기 id랑 label for 뒤에랑 같은 내용을 써야 묶임
+        css를 편하게 하려면 label대로 묶어주고 input대로 써줘야 함
         2. 서버에는 key=value 형태로 보내야 하는데
             key가 name, value가 value임 
         -->
+
+      <!-- legend 태그: fieldset 태그와 함께 사용되는 태그.
+             fieldset: form 요소들을 그룹으로 묶을 때 사용
+             legend는 그 그룹(박스)의 제목 역할함
+             legend는 fieldset 박스의 좌측 상단에 위치한 제목처럼 표시됨 -->
+
       <fieldset>
         <legend>관심사</legend>
         <input type="checkbox" id="travel" name="interest" value="travel" />
@@ -77,7 +93,15 @@
     </form>
 
     <h2>파일, 숨김</h2>
-    <!-- file : 파일 첨부, hidden : 숨겨진 데이터 -->
+    <!-- file : 파일 첨부 / hidden : 숨겨진 데이터 
+         file만 쓰면 모든 파일 선택이 가능함 그래서 이미지 파일만 지정해서 쓰려면 accept을 쓰고 image라고 쓰기
+         그러면 이미지 파일만 선택가능함
+         .mp4 : 동영상을 의미-->
+
+    <!--const user = { name: "규빈",  age: 31}; 
+          여기서 name과 age가 key임 규빈,31은 그에 대응하는 value
+          key : value / 구조는 이름표 : 내용
+          name은 어떤 항목인지 이름 붙이는 것 / value는 그 항목의 실제값(서버로 전송될 내용)-->
     <form action="">
       <input type="file" name="upload" accept="image/*, .mp4" />
       <input type="hidden" name="data" value="1234" />
@@ -85,8 +109,10 @@
     </form>
 
     <h2>날짜 & 시간</h2>
+    <!-- input : ->이렇게 쓰면 자동으로 서식이 만들어짐 -->
     <form action="">
       datetime-local : <input type="datetime-local" /> <br />
+      <!--week 몇번째 주, 년도 -->
       week : <input type="week" /><br />
       month : <input type="month" /><br />
       date : <input type="date" /><br />
@@ -95,16 +121,27 @@
 
     <h2>그 외의 input</h2>
     <form action="">
+      <!-- <input type="email" /><br /> 이거 쓰고, <button type="submit">전송</button> 이거
+       쓰면 @를 넣지 않으면 전송이 안됨 -->
       email : <input type="email" /><br />
       url : <input type="url" /><br />
       tel : <input type="tel" /><br />
       search : <input type="search" /><br />
-      number : <input type="number" /> range : <input type="range" /><br />
+      <!--  type이 number라면 문자값은 입력 안되고 숫자값만 입력됨 -->
+      number : <input type="number" />
+      <!-- range를 쓰면 범위가 표시됨 (0-100까지로 기본값으로 지정됨)-->
+      range : <input type="range" /><br />
       color : <input type="color" /><br />
       <button type="submit">전송</button>
     </form>
 
     <h2>select, textarea</h2>
+    <!-- slect 누르면 화살표로 누르는 선택버튼이 나옴 
+     slect 태그는 반드시 option 태그랑 같이 써야 함
+     optgroup은 slect태그안에 쓸 수 있음. option 태그들을 묶는데 쓰임
+     disabled 쓰면 "선택하세요" 이 글이 선택이 안됨
+     selected를 쓰면 일단 맨처음에는 "선택하세요"가 선택되어져 있음 근데 클릭해서 막상 선택하려고 하면
+     disabled 때문에 "선택하세요"라는 글을 선택못하게 됨-->
     <form action="">
       <select name="national" id="">
         <option value="" disabled selected>선택하세요</option>
@@ -117,6 +154,9 @@
           <option value="fr">프랑스</option>
         </optgroup>
       </select>
+
+      <!-- style에 resize : none을 해놓으면 오른쪽 끝단에 늘리는 표시가 사라지면서
+       사용자가 멋대로 못늘리게 만듦 -->
       <textarea style="resize: none" id=""></textarea>
     </form>
   </body>

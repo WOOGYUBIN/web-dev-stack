@@ -10,36 +10,52 @@
     <h2>1. var, let, const</h2>
     <script>
       // 변수 : 값을 담는 공간
-      // =의 의미가  오른쪽에 있는 값(1)을 왼쪽으로 담았다는 뜻
-      // 변수명 = 값
+      // =의 의미가  오른쪽에 있는 값(1)을 왼쪽(oldVar)으로 담았다는 뜻
+      // 자바스크립트는 var/let/const 변수명 = 값 으로 표시  (변수라는 값을 지칭하는 거를 var라고 함)
       // 자바스크립트는 '' 표나 "" 둘다 쓸 수 있음
-      // 변수는 재활당이 가능함 ex. 1에서 변경으로 변환
+      // 값을 담는다 = 할당한다
+      // 즉, 변수는 재활당이 가능함 ex. 1에서 "변경"으로 변환
 
-      //   var : 일반 변수 선언(예전버전임. 가능하면 사용X). 변수라는 값을 지칭하는 거를 var라고 함
+      /* var	- "변수를 만들겠다"는 선언
+         oldVar	- 변수의 이름 (내가 붙인 이름표)
+         =	- 오른쪽 값을 왼쪽 변수에 대입한다는 뜻
+         1 - 저장할 실제 값  */
+
+      /* var oldVar = 1;  - oldVar라는 이름의 변수에 숫자 1을 저장. 
+         oldVar = "변경"; - 변수의 값을 "변경"이라는 문자열로 바꿨어.즉, oldVar는 이제 숫자 1이 아니라 "변경"이라는 텍스트가 들어 있는 상태.
+          console.log(oldVar); -"oldVar라는 변수 안에 들어 있는 값을 출력해줘!"
+          console - 브라우저 안에 있는 **개발자 도구(console)**에 접근하는 객체
+          log() - console에 출력하는 함수(명령)
+          (oldVar) - 괄호 안에 출력하고 싶은 값 또는 변수를 넣는 곳   */
+
+      //   var : 일반 변수 선언(예전 버전임. 가능하면 사용X).
       var oldVar = 1;
       oldVar = "변경";
       console.log(oldVar);
 
-      //   let : 일반 변수 선언(가끔 사용함) ex. 첨에 성예찬 -> 나중에 이상엽으로 변환가능
+      //   let : 일반 변수 선언(가끔 사용) ex. 첨에 성예찬 -> 나중에 이상엽으로 변환가능
       let nickname = "성예찬";
       nickname = "이상엽";
       console.log(nickname);
 
-      //  const : 상수 선언(자주 사용함) 즉, 애초부터 해당하는 값을 지정해버리면 그 뒤에 값을 변경 못함 ex. 조규상에서 최다인으로 변경하면 에러뜸
+      //  const : 상수 선언(자주 사용) 즉, 애초부터 해당하는 값을 지정해버리면 그 뒤에 값을 변경 못함 ex. 조규상에서 최다인으로 변경하면 에러뜸
       const name = "조규상";
-      //   name = "최다인";
+      // name = "최다인"; => const를 쓰면 "최다인"이라고 값을 변경하고자 해도 에러뜸
       console.log(name);
     </script>
+
     <!-- 스크립 태그막아도 script들 마다 서로 공유됨  -->
+    <!-- 앞에서 const name 이렇게 변수명을 한번 쓰면 뒤에 const name을 또 못씀 에러남
+      const 다음에 다른 변수명을 써야함  -->
 
     <h2>2. 자료형과 typeof</h2>
     <script>
-      const userId = "최다인"; // 문자(최,다,인), 문자열(string)(문자들 ex.최다인)
+      const userId = "최다인"; // 문자열(string)- 문자들 ex.최,다,인 / "" 따옴표 써야함
       const age = 15; //숫자(number)- "" 따옴표 필요없음
-      const check = true; //true, false- 논리형임 -boolean이라고도 함
-      let unknown; //값을 안 넣은거를 변수 선언만 했다고 표현. undefined -자유형. 값이 정의되지 않음
-      let isNone = null; //null- 값이 없음
-      console.log(typeof userId);
+      const check = true; //논리형(boolean)- true, false
+      let unknown; //자유형- undefined(값이 정의되지 않음) - let unknown =값; 이렇게 안하고 변수 선언만 했을시 나타남
+      let isNone = null; //null(값이 없음)
+      console.log(typeof userId); // userId 앞에 typeof를 쓰면 해당 자료형이 뭔지 알려줌
       console.log(age);
       console.log(check);
       console.log(unknown);
@@ -47,20 +63,23 @@
 
       let test = "test";
       console.log(typeof test);
-      test = 123;
+      test = 123; //처음 변수지정할 때 test인 문자열이었음에도 자바스크립트는 자유도가 높아서 숫자로 입력하면 숫자형으로 변경됨
+      console.log(typeof test);
       test = false;
       console.log(typeof test);
     </script>
+
     <h2>3. 문자열 & 템플릿 리터럴</h2>
     <script>
       const hobby = "게임";
       console.log("내 취미는 " + hobby + "입니다."); // =console.log(`내 취미는 ${hobby}입니다.`); 같음 +(연산자)를 쓸거냐 ${}를 쓸거냐 편한대로 선택해서 쓰기
-      console.log(`내 취미는 ${hobby}입니다.`); //템플릿임
+      console.log(`내 취미는 ${hobby}입니다.`); //템플릿임 - (`(백틱) ${hobby} `) 이렇게 쓰는방식
 
-      const escape = '내 이름은 \n"문채은"입니다.'; // \이거를 이스케이프문자라고 함 \n은 줄바꿈을 의미함
-      //   ('내 이름은 \n"\문채은"입니다.');
+      const escape = '내 이름은 \n"문채은"입니다.'; // \(이스케이프문자)- enter위에 키보드에 있음, \n은 줄바꿈을 의미
+      // '내이름은 "문채은"입니다' => 따옴표를 보여주고 싶을때 '내 이름은 \문채은\입니다.'; 라고 표시하기
       console.log(escape);
     </script>
+
     <h2>4. 숫자</h2>
     <script>
       const num1 = 10;
@@ -69,21 +88,24 @@
       console.log("빼기 :", num1 - num2); //7
       console.log("곱하기 :", num1 * num2); //30
       console.log("나누기 :", num1 / num2); //3.333333...
-      console.log("나머지 :", num1 % num2); //1 (10에서 3을 나누면 결과값이 1이 남음)
+      console.log("나머지 :", num1 % num2); //1  (10에서 3을 나누면 결과값이 1이 남음)
       console.log("제곱 :", num1 ** num2); //1000
 
       // 문자열 -> 숫자로 바꿀 경우
-      console.log(Number("100")); // Number("")
+      // console.log(typeof "100");  => ""가 들어가면 문자열(string)임
+      console.log(typeof Number("100")); // Number 가 뜸
+      console.log(Number("100")); // 100
       console.log(Number("Hello")); //Hello는 숫자(numeber)가 아니기 때문에 잘못입력했다는 NaN이 뜸
 
       // 숫자 -> 문자열로 바꿀 경우
-      console.log(String(300));
+      console.log(typeof String(300)); //string이 뜸
+      console.log(String(300)); // 300이라고 나오지만 300이 문자임
 
       // 소수점 제거 -> 정수로 만들 경우
       console.log(parseInt(3.9)); // 3 -> Int는 정수를 의미. parseInt는 소수점을 제거함
 
       // 문자열 -> 실수로 바꿀 경우
-      console.log(parseFloat("4.2"));
+      console.log(parseFloat("4.2")); //실수(Float): 소수점을 가진 숫자
     </script>
 
     <h2>5. Boolean과 비교 연산자</h2>
@@ -93,33 +115,34 @@
 
       //   Boolean 변환
       console.log(Boolean("World")); // 어떠한 문자라도 있으면 true
-      console.log(Boolean("")); // ""안에 문자가 하나도 없으면 false
+      console.log(Boolean("")); // ""안에 문자가 하나도 없으면 false   (""따옴표 자체가 문자인데 문자가 비어있으니까)
 
       console.log(Boolean(0)); // 0만 false
       console.log(Boolean(1)); // 0을 제외한 값은 true
 
       const a = 100; //숫자형(Number)
       const b = "100"; //문자열(String)
-      //   100이랑 100이랑 같아? 같네 => true
+      //   100이랑 "100"이랑 같아? 같네 => true
       console.log(a == b); //== 같다는 뜻임. a와 b가 같으니까 true가 나옴
+
       //   숫자 100이랑 문자 100이랑 같니? 아니지 => false
       console.log(a === b); // === type까지 봄 (문자형인지 숫자형인지 까지 본다는 말). 자바스크립트에서는 이걸 씀
-      console.log(a === Number(b)); // true가 나옴
+      console.log(a === Number(b)); // true가 나옴 (Number(b)는 문자100을 숫자100으로 바꾼거니까)
 
-      //   !=, !== : 같지 않니?
-      console.log(a != b); // false 나옴
-      console.log(a !== b); //true 나옴 (숫자100이랑 문자 100이랑 같지 않다)
+      //   !=, !== : 같지 않다
+      console.log(a != b); // false (100이랑 "100"이랑 같은데 같지 않다고 하니까 false)
+      console.log(a !== b); //true (숫자100이랑 문자 100이랑 같지 않은데 같지 않다고 했으니까 true)
 
       const c = 200;
-      console.log(a < c); // true가 나옴
-      console.log(a > c); // false가 나옴
+      console.log(a < c); // true    (앞에서 const a = 100; 이었음 )
+      console.log(a > c); // false
       console.log(a >= c); // false
       console.log(a <= c); // true
 
       //   연습
       console.log("0" == 0); //true
-      console.log("0" === 0); //false
-      console.log(Boolean("")); //false
+      console.log("0" === 0); //false   (문자 "0"이랑 숫자 0이랑 다르니까)
+      console.log(Boolean("")); //false (""따옴표 자체가 문자인데 문자가 비어있으니까 false)
       console.log(Boolean("0")); //true
     </script>
 
@@ -128,17 +151,23 @@
       const x = 10;
       const y = 20;
 
-      //   and : (왼쪽과 오른쪽)둘 다 true이면 true
-      //   && : 그리고 --(왼쪽과 오른쪽 둘다 봄) 앞(왼쪽)이 true면 뒤에 거를 계산함. 앞(왼쪽)이 false면 뒤에 거는 쳐다보지도 않고 계산안함
+      /*   && (=and) : (왼쪽과 오른쪽)둘 다 true이면 true
+                       (왼쪽과 오른쪽 둘다 봄) 앞(왼쪽)이 true면 뒤에 거를 계산함. 
+                        앞(왼쪽)이 false면 뒤에 거는 쳐다보지도 않고 계산 안함 */
       console.log(x < 15 && y > 10); //true
       console.log(x > 15 && y > 10); //false
+
       //   or : (왼쪽, 오른쪽 중) 하나만 true여도 true
       console.log(x < 15 || y > 10); //true
+
       //   not : 부정  (!를 붙이면 반대의미를 가짐)
       console.log(!false); //true (false가 아니야! 라고 부정하기 때문에)
       console.log(!!true); // true (true가 아닌게 아니야! => true맞아)
 
-      console.log("JavaScript" && 12345);
+      /* 문자열은 ""안에 문자가 있으니까 true. 앞에가 true니까 그 다음 뒤에 있는 12345를 봄
+         뒤에있는 12345를 봄 뒤에 숫자가 있으니까 맞다고 생각하고 값을 내보냄*/
+      console.log("JavaScript" && 12345); // 12345
+      console.log("" && 12345); // 빈칸으로 뜸 (""안에 문자가 없으니까 앞에서 false니까 뒤에 꺼를 계산안함)
       console.log(null || "JS"); //null값은 false임  ||이게 "또는"이라는 의미니까 왼쪽값이 false라도 뒤에 값이 맞으면 그 값을 계산함
     </script>
   </body>

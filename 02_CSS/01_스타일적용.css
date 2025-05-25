@@ -1,3 +1,14 @@
 p {
   color: green;
 }
+
+/* 꾸밀애들(style)을 나눠서 style대로 꾸미기 위해서 
+     .css라는 file을 따로 만듦
+     
+    ex) html에 있는 p태그를 꾸미고 싶을때 여기에다가 작성*/
+
+/* 단! html에 있는 p태그에 스타일을 주고 싶을때 
+    html file에서 head 태그안에 css file과 링크를 걸어둬야 함 */
+
+/* 참고로 만약에 .css 파일에서 h1 태그에 color를 입혀도, html에서 <h1>태그에 color를 입혀버리면
+    html에 스타일 준게 우선순위(상위)라서 html 파일에 적힌 색깔대로 따라감  */
