@@ -113,20 +113,19 @@
     </script>
 
     <h2>7. Slice (자르기) : 원본 배열 유지</h2>
-    --------------02:03:00-----------------
     <script>
       const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
       // slice(시작인덱스, 끝인덱스) : 시작 포함, 끝 미포함
-      const sliced = numbers.slice(2, 5); // sliced = [2, 3, 4]; 인덱스는 2부터 시작(포함) 인덱스 5는 포함하지 않음
-      console.log(numbers);
-      console.log(sliced);
+      const sliced = numbers.slice(2, 5); //(2,5)는 numbers에서 일부를 가져옴. numbers.slice(2, 5);를 변수에 담아둠
+      console.log(numbers); // 원본배열은 유지되기 때문에 브라우저에서 아무변화도 안일어나고 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]가 나옴
+      console.log(sliced); // sliced = [2, 3, 4]; 인덱스는 2부터 시작(포함) 인덱스 5는 포함하지 않음
     </script>
 
     <h2>8. 구조 분해 할당</h2>
     <script>
-      // 프로그래밍 언어에서 여러 값을 동시에 여러 변수에 할당하는 기술
+      //구조 분해 할당: 프로그래밍 언어에서 여러 값을 동시에 여러 변수에 할당하는 기술
       const friends = ["짱구", "유리", "철수", "훈이", "맹구"];
-      const [f1, f2, f3, f4, f5] = friends; //  다른 방법 console.log(friends[friends.indexOf("철수")]);
+      const [f1, f2, f3, f4, f5] = friends; //  다른 방법 console.log(friends[2])  또 다른 방법 console.log(friends[friends.indexOf("철수")]);
       console.log(f3);
     </script>
 
@@ -134,13 +133,13 @@
     <h2>9. Set : 중복 제거</h2>
     <script>
       const arr3 = [1, 2, 2, 3, 3, 4, 4, 4, 5];
-      const unique = new Set(arr3);
-      console.log(unique);
-      //   ...전개(Spread) 연산자 or 전개 연산자라고 함
-      const uniqueArr = [...unique]; // [1, 2, 3, 4, 5]
+      const unique = new Set(arr3); //new라는 키워드는 class와 관련됨. class가 객체이고 객체가 곧 class이다
+      console.log(unique); // Set(5) {1, 2, 3, 4, 5}   {} =>객체임  [] => 배열임
+      //   ...은 Spread 연산자 or 전개 연산자라고 함
+      const uniqueArr = [...unique];
+      console.log(uniqueArr); // [1, 2, 3, 4, 5]
       const arr4 = [6, 7, 8, 9];
-      // [1, 2, 3, 4, 5]+ [6, 7, 8, 9] => [1, 2, 3, 4, 5, 6, 7, 8, 9]으로 만들고 싶다면
-      console.log([...uniqueArr, ...arr4]);
+      console.log([...uniqueArr, ...arr4]); // [1, 2, 3, 4, 5]+ [6, 7, 8, 9] => [1, 2, 3, 4, 5, 6, 7, 8, 9]가 됨
     </script>
   </body>
 </html>
