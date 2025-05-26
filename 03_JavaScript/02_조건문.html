@@ -87,8 +87,8 @@
 
     <h2>3. switch</h2>
     <script>
-            // break;를 걸어야지 앞에 조건이 맞을 경우 값이 도출됨
-            /*
+      // break;를 걸어야지 앞에 조건이 맞을 경우 값이 도출됨
+      /*
                     switch(데이터값-문자 or 숫자가 들어감){
                      case 조건A(=값=데이터):
                             조건A가 true인 경우 실행
@@ -99,10 +99,10 @@
                      default:
                           (앞에 있는) 모든 조건이 false
                     }  */
-            const number = prompt("숫자를 입력하세요");
-            //  조건문 문제) number 값이 짝수이면 "짝수", 홀수이면 "홀수", 그게 아니면 "숫자가 아닙니다".
+      const number = prompt("숫자를 입력하세요");
+      //  조건문 문제) number 값이 짝수이면 "짝수", 홀수이면 "홀수", 그게 아니면 "숫자가 아닙니다".
 
-            /* if(number 값이 짝수이면 -> number 값을 2로 나눴을 때 나머지가 0인 경우) {
+      /* if(number 값이 짝수이면 -> number 값을 2로 나눴을 때 나머지가 0인 경우) {
                          "짝수"
                      } else if (number 값이 홀수이면-> number값을 2로 나눴을 때 나머지가 1인 경우) {
                          "홀수"}
@@ -110,43 +110,52 @@
                           "숫자가 아닙니다."
                          } */
 
-            if (number % 2 === 0) {
-              console.log("짝수");
-            } else if (number % 2 === 1) {
-              console.log("홀수");
-            } else {
-              console.log("숫자가 아닙니다.");
-            }
-      -----------4:43:46 --------
-            switch (number % 2) {
-              case 0:
-                console.log("짝수");
-                break;
-              case 1:
-                console.log("홀수");
-                break;
-              default:
-                console.log("숫자가 아닙니다.");
-            }
+      if (number % 2 === 0) {
+        console.log("짝수");
+      } else if (number % 2 === 1) {
+        console.log("홀수");
+      } else {
+        console.log("숫자가 아닙니다.");
+      }
+
+      // 연산자가 들어가도 식이 아니라 데이터값으로 됨
+      /* switch(데이터) {
+        case: 값
+        값이 일치하는 경우
+        break;
+      } */
+
+      switch (number % 2) {
+        case 0:
+          console.log("짝수");
+          break;
+        case 1:
+          console.log("홀수");
+          break;
+        default:
+          console.log("숫자가 아닙니다.");
+      }
     </script>
     <h2>4. 중첩 if</h2>
     <script>
-      // 조건문 안에 조건문을 넣은 형태
-      // 조건문) 아이디가 user1, 비밀번호가 1234인 경우만 "로그인 성공"
+      // 중첩 if :조건문 안에 조건문을 넣은 형태
+      // 조건문 문제) 아이디가 user1, 비밀번호가 1234인 경우만 "로그인 성공"
       // 비밀번호가 틀리면 "비밀번호 오류"
       // 아이디가 틀리면 "아이디 오류"
-      let id = prompt("아이디를 입력해주세요");
-      let pw = prompt("비밀번호를 입력해주세요");
-      if (id === "user1" && pw === "1234") {
-        console.log("로그인 성공");
-      } else if (id != "user1") {
-        console.log("아이디 오류");
-      } else if pw != 1234) {
-        console.log("비밀번호 오류");
-      }
 
+      //중첩 if를 안쓰는 경우 (그냥 if만 쓸 경우)
+      /* if( 아이디가 user1, 비밀번호가 1234인 경우) {
+         "로그인 성공"
+       } else if (비밀번호가 틀리면) {
+         "비밀번호 오류"
+       } else if (아이디가 틀리면) {
+         "아이디 오류"
+       }  */
+
+      //방법1
       let id = "user1";
       let pw = "1234";
+
       if (id === "user1" && pw === "1234") {
         console.log("로그인 성공");
       } else if (pw !== "1234") {
@@ -154,6 +163,20 @@
       } else if (id !== "user1") {
         console.log("아이디 오류");
       }
+
+      /* 조건은 위에서 아래로 입력된 값 대로 출력되기 때문에 아이디 입력해달라는 문구 다음에 비밀번호를 입력해달라는 문구를 넣으면
+         쓴대로 된다 그렇기에 아이디는 잘못 입력했을 때, 비밀번호를 입력해달라는 문구가 안 뜨게 할려면
+         순서를 바꿔서 작성해줘야 함 
+      
+      id = prompt("아이디를 입력해주세요");
+      pw = prompt("비밀번호를 입력해주세요");
+      if (id === "user1") {
+        console.log("아이디 맞음");
+      } else {
+        console.log("아이디 오류");
+      } */
+
+      // if (pw === "1234") 에서 비밀번호가 숫자값만 있게 하려면 if (Number(pw) === 1234) 라고 작성
 
       if (id === "user1") {
         if (pw === "1234") {
@@ -165,9 +188,24 @@
         console.log("아이디 오류");
       }
 
+      // 아래처럼 하면 아이디 입력 요구 다음 그대로 비밀번호가 뜬다
+      /*  
+      id = prompt("아이디를 입력해주세요");
+      pw = prompt("비밀번호를 입력해주세요");
+      if (id === "user1") {
+        if (pw === "1234") {
+          console.log("로그인 성공");
+        } else {
+          console.log("비밀번호 오류");
+        }
+      } else {
+        console.log("아이디 오류");
+      } */
+
+      //아이디 입력후 아이디가 맞았을 때 비밀번호가 뜨게 하는 방법
       id = prompt("아이디를 입력해주세요");
       if (id === "user1") {
-      pw = prompt("비밀번호를 입력해주세요");
+        pw = prompt("비밀번호를 입력해주세요");
         if (pw === "1234") {
           console.log("로그인 성공");
         }
@@ -185,13 +223,17 @@
       switch (fruit) {
         case "apple":
           console.log("사과");
+          break;
         case "orange":
           console.log("오렌지");
+          break;
         case "banana":
           console.log("바나나");
+          break;
         case "kiwi":
           console.log("키위");
-      }
+          break;
+      } //default가 else랑 같아서 생략가능함
     </script>
   </body>
 </html>

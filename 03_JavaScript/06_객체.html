@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>객체</title>
+  </head>
+  <body>
+    <h1>객체</h1>
+    <script>
+      /*
+        사람(객체) {
+            // 특징들! => 변수로 만듦 
+            이름,
+            나이,
+            사는곳 
+
+            // 행동들 => 함수(기능)
+            일어난다 
+        }   밥먹는다 
+            씻는다 
+            옷입는다 
+            나간다 
+        */
+      // (변수를 개별적으로 놔두면) 서로 관련있다는게 보이지 않음  ex. 어떤 사람의 age인지 모름
+      const name = "박기민";
+      const age = 10;
+      const addr = "서울";
+
+      // (변수를 묶어서) 하나의 배열로 놔둠 (한사람의 정보- 서로 관련이 있다는 거 보임, 의미 파악 불가  ex. 서울이 이름이구나 라고 잘못해석할 수 있음)
+      const personArr = ["박기민", 10, "서울"];
+
+      // 객체 : 키 - 값 구조 (ex. name이 키, 박기민이 값) (객체는 중괄호{}를 씀)
+      // name, age, addr => 변수
+      // hello(){} => 함수
+      const personObj = {
+        name: "박기민",
+        age: 10,
+        addr: "서울",
+        hello() {
+          console.log(`안녕하세요, ${this.name}입니다.`);
+        },
+      };
+      console.log(personObj);
+      personObj.hello(); // 여기서 ()안은 함수를 지칭 /  ()가 있으면 함수
+      console.log(personObj.name); //여기서 name은 변수를 지칭 / ()가 없으면 변수
+    </script>
+
+    <h2>1. 객체 생성과 속성/함수 추가</h2>
+    <script>
+      const person1 = {};
+      person1.name = "우규빈";
+      person1["age"] = 9;
+      person1.hello = function () {
+        console.log(`안녕? 나는 ${this.name}이야, 나이는 ${this.age}살`);
+      };
+
+      person1.hello();
+
+      const person2 = new Object(); // 거의 안씀 {} <- 이거랑 동일
+      person2.name = "김은진";
+      person2.age = 7;
+      person2.hello = function () {
+        console.log(`안녕? 나는 ${this.name}이야, 나이는 ${this.age}살`);
+      };
+      person2.hello();
+    </script>
+
+    <h2>2. this</h2>
+    <script>
+      const objFunc = {
+        name: "서지은",
+        func: function () {
+          console.log(this);
+          console.log(`익명 함수: ${this.name}`);
+        },
+      };
+      objFunc.func();
+
+      const objArrow = {
+        name: "박지연",
+        func: () => {
+          console.log(this); // 외부 this (전역 객체 -window 를 뜻함)
+          console.log(`화살표 함수: ${this.name}`);
+        },
+      };
+      objArrow.func();
+
+      //메서드 축약형(Method Shorthand)- func: function() 이거를 축약한게 func() {}임
+      const objMethod = {
+        name: "이승민",
+        func() {
+          console.log(`메서드 축약형 : ${this.name}`);
+        },
+      };
+      objMethod.func();
+    </script>
+
+    <h2>3. 생성자 함수 & 클래스</h2>
+    <script>
+      // 생성자 함수
+      function Person(name, age) {
+        this.name = name;
+        this.age = age;
+        this.hello = function () {
+          console.log(`안녕? 나는 ${this.name}이야, 나이는 ${this.age}살`);
+        };
+      }
+      const p1 = new Person("오재덕", 5);
+      const p2 = new Person("장효준", 3);
+      p1.hello();
+      p2.hello();
+
+      // 클래스  --()가 없음
+      class Person2 {
+        //constructor : 클래스 객체를 생성할 때 호출되는 함수
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+        hello() {
+          console.log(`안녕? 나는 ${this.name}이야, 나이는 ${this.age}살`);
+        }
+      }
+      const p3 = new Person2("전영현", 2);
+      p3.hello();
+    </script>
+  </body>
+</html>
