@@ -8,39 +8,42 @@
   <body>
     <h1>함수</h1>
     <script>
-      // 1. 매개변수(parameter) 없고, 리턴값(=결과값)이 없는 경우
+            // 1. 매개변수(parameter) 없고, 리턴값(=결과값)이 없는 경우
 
-      // 함수는 function을 사용.
-      /* function 함수명(매개변수=파라미터 값= 인자값)
-         {console.log("")}
-         함수명(); */
-      function sayHello() {
-        console.log("안녕하세요~");
-      }
-      sayHello(); // -> 함수 호출 (함수를 실행하려면 함수를 호출해야 함)
+            // 함수는 function을 사용. 함수명은 변수명처럼 소문자나 카멜케이스법 사용함
+            /* function 함수명(매개변수=파라미터 값= 인자값)
+               {console.log("")}
+               함수명();
+               */
+      ----------1:35:48
+            //sayHello가 함수명
+            function sayHello() {
+              console.log("안녕하세요~");
+            }
+            sayHello(); // -> 함수 호출 (함수를 실행하려면 함수를 호출해야 함)
 
-      // 2. 매개변수 있고, 리턴값이 없는 경우
-      function greet(name = "성모") {
-        console.log(name + "님, 안녕하세요~");
-      }
-      greet("규빈"); // 파라미터값(=인자 값)이 name으로 들어감
-      greet(); /* 파라미터를 보내지 않으면 원래는 undefined가 뜸
-                  greet(name "성모") -> name에 기본값(ex. 성모)을 설정하면 인자값(파라미터)을 받지 않았을때 기본값이 뜸
-                */
-      // 3. 매개변수 없고, 리턴값이 있는 경우
-      function getNumber() {
-        return 1049;
-      }
-      getNumber(); //1049 - getNumber() 자체가 1049임 (검사탭에 안뜸)
-      console.log(getNumber()); //1049 숫자가 뜨려면 console을 입력해야 함
+            // 2. 매개변수 있고, 리턴값이 없는 경우
+            function greet(name = "성모") {
+              console.log(name + "님, 안녕하세요~");
+            }
+            greet("규빈"); // 파라미터값(=인자 값)이 name으로 들어감
+            greet(); /* 파라미터를 보내지 않으면 원래는 undefined가 뜸
+                        greet(name "성모") -> name에 기본값(ex. 성모)을 설정하면 인자값(파라미터)을 받지 않았을때 기본값이 뜸
+                      */
+            // 3. 매개변수 없고, 리턴값이 있는 경우
+            function getNumber() {
+              return 1049;
+            }
+            getNumber(); //1049 - getNumber() 자체가 1049임 (검사탭에 안뜸)
+            console.log(getNumber()); //1049 숫자가 뜨려면 console을 입력해야 함
 
-      // 4. 매개변수 있고, 리턴값이 있는 경우
-      //참고로 파라미터는 여러개 넣을 수 있음 아래는 a값, b값 두개의 값을 받겠다는 뜻임
-      function add(a, b) {
-        return a + b; // 이 두 파라미터값을 더한 값을 내보낸다는 뜻임
-      }
-      add(30, 50); //호출할 때 첫번째 30은 a. 두번째 50은 b임
-      console.log(add(30, 50)); // 80
+            // 4. 매개변수 있고, 리턴값이 있는 경우
+            //참고로 파라미터는 여러개 넣을 수 있음 아래는 a값, b값 두개의 값을 받겠다는 뜻임
+            function add(a, b) {
+              return a + b; // 이 두 파라미터값을 더한 값을 내보낸다는 뜻임
+            }
+            add(30, 50); //호출할 때 첫번째 30은 a. 두번째 50은 b임
+            console.log(add(30, 50)); // 80
     </script>
 
     <h2>1. 변수의 유효범위(Scope)</h2>
