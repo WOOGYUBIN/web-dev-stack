@@ -8,7 +8,7 @@
   <body>
     <h1>반복문</h1>
     <script>
-      /*
+      /*//i++에 i+=2 이런식으로 넣을수도 있음. i *= 2같은것도 넣을 수 있음 
             for(초기값;조건식;증감연산자) {
             반복문 조건에 해당되는만큼 실행
             }
@@ -29,7 +29,6 @@
       num = num + 1; // 2 (앞에 num과 뒤에 num은 같음)
       // num = num + 1 는 ++num, num++랑 같음
       // num = num - 1 은 --num, num--와 같음
-      -----------------2:56:02-----------
       console.log(++num); // 3
       console.log(--num); // 2
       console.log(num++); // 2, num = 3
@@ -47,33 +46,36 @@
       num -= 2; // num = num - 2; 와 같음
       console.log(num); // 6
     </script>
+    ------------------------------------------------------
 
     <h2>3. 배열과 for문</h2>
     <script>
-      const movies = ["야당", "파과", "미션 임파서블", "플립", "릴로 & 스티치"];
-      console.log(movies[0]); // 야당
-      console.log(movies[1]); // 파과
-      console.log(movies[2]);
-      console.log(movies[3]);
-      console.log(movies[4]);
-      // for(변수 = 초기값(숫자만);)
-      // i <= 4;  i < 5; 와 같음
-      for (let i = 0; i < movies.length; i++) {
-        console.log(movies[i]);
-      }
+            const movies = ["야당", "파과", "미션 임파서블", "플립", "릴로 & 스티치"];
+            console.log(movies[0]); // 야당
+            console.log(movies[1]); // 파과
+            console.log(movies[2]);
+            console.log(movies[3]);
+            console.log(movies[4]);
+            // for(변수 = 초기값(숫자만);)
+            // i <= 4;  i < 5; 와 같음
+      ---------3:15:49----
+            // 문제) 영화를 하나씩 순차적으로 가지고 오세요
+            for (let i = 0; i < movies.length; i++) {
+              console.log(movies[i]);
+            }
 
-      // 자바스크립트에서만 사용) for ... in : 인덱스 기반
-      // for(const 인덱스 in 배열) {}
-      // JSON.stringify(배열) -> 배열을 문자열로 바꿈
-      for (const index in movies) {
-        console.log(movies[index]);
-      }
+            // 자바스크립트에서만 사용) for ... in : 인덱스 기반
+            // for(const 인덱스 in 배열) {}
+            // JSON.stringify(배열) -> 배열을 문자열로 바꿈
+            for (const index in movies) {
+              console.log(movies[index]);
+            }
 
-      // for ... of : 값 기반
-      // for(const 값 of 배열) {}
-      for (const value of movies) {
-        console.log(value);
-      }
+            // for ... of : 값 기반
+            // for(const 값 of 배열) {}
+            for (const value of movies) {
+              console.log(value);
+            }
     </script>
     <h2>4. while문</h2>
     <script>
