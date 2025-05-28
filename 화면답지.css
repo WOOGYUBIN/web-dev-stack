@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+}
+body {
+  background: skyblue;
+  display: flex; /*1. 글자가 옆으로 적힘*/
+  flex-direction: column; /*2. 세로로 글자 정렬됨*/
+  justify-content: center; /*3. 중간으로 글자 정렬*/
+  align-items: center; /* 3. 중간으로 글자 정렬*/
+  height: 100vh; /* 4. 배경색이 세로로 스크롤이 생기면서 꽉참*/
+}
+/* 배경색깔 - 배경스타일css참고 */
+/* 플렉스 박스 사용- 정가운데 놓기  */
+h1,
+h2,
+h3 {
+  margin-bottom: 10px;
+} /*레이아웃 - 박스모델 */
+h1 {
+  font-size: 5rem;
+}
+h2 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2rem;
+}
