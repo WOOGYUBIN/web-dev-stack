@@ -70,7 +70,7 @@ const count = () => {
   ${second % 60}`;
 };
 
-import quotes from "./화면답지.js";
+import quotes from "./05_DOM.js";
 
 const randomQuote = () => {
   const random = quotes[Math.floor(Math.random() * quotes.length)];

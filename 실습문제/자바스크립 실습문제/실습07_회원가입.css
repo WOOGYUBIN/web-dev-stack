@@ -1,0 +1,26 @@
+body {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  text-align: center;
+}
+#id {
+  width: 100%;
+}
+button {
+  border: none;
+  font-size: none;
+  padding: 5px 10px;
+  font-weight: bold;
+  background: gray;
+  color: white;
+  border-radius: 5px;
+}
+button:last-child {
+  background: rgb(43, 192, 167);
+  color: white;
+}
