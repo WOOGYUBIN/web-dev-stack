@@ -13,139 +13,143 @@
     조건문 활용 
     4. 정규표현식 활용  -->
     <h1>회원가입</h1>
-    <input
-      type="text"
-      name="id"
-      id="username1"
-      placeholder="아이디를 입력해주세요"
-    />
-    <p id="result1"></p>
-    <p>영문자로 시작하고 영문자와 숫자 조합으로 4~12자 이내</p>
-    <script>
-      username1.addEventListener("input", (e) => {
-        // console.log(e.target.value);
-        let username1 = /^[a-zA-Z][a-zA-Z0-9]{3,11}$/;
-        if (username1.test(e.target.value)) {
-          console.log("Id 일치");
-          result1.innerHTML = "OK!";
-          result1.style.color = "green";
-        } else {
-          console.log("Id 불일치");
-          result1.innerHTML = "NO!";
-          result1.style.color = "red";
-        }
-      });
-    </script>
+    <form action="" method="get">
+      <input
+        type="text"
+        name="id"
+        id="username1"
+        placeholder="아이디를 입력해주세요"
+      />
+      <p id="result1"></p>
+      <p>영문자로 시작하고 영문자와 숫자 조합으로 4~12자 이내</p>
+      <script>
+        username1.addEventListener("input", (e) => {
+          // console.log(e.target.value);
+          let username1 = /^[a-zA-Z][a-zA-Z0-9]{3,11}$/;
+          if (username1.test(e.target.value)) {
+            console.log("Id 일치");
+            result1.innerHTML = "OK!";
+            result1.style.color = "green";
+          } else {
+            console.log("Id 불일치");
+            result1.innerHTML = "NO!";
+            result1.style.color = "red";
+          }
+        });
+      </script>
 
-    <input
-      type="text"
-      name="password"
-      id="pw"
-      placeholder="비밀번호를 입력해주세요"
-    />
-    <p id="result2"></p>
-    <p>영문자, 숫자, 특수문자 조합으로 8~15자 이내</p>
-    <script>
-      pw.addEventListener("input", (e) => {
-        // console.log(e.target.value);
-        let pw =
-          /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,15}$/;
-        if (pw.test(e.target.value)) {
-          console.log("패스워드 일치");
-          result2.innerHTML = "OK!";
-          result2.style.color = "green";
-        } else {
-          console.log("패스워드 불일치");
-          result2.innerHTML = "NO!";
-          result2.style.color = "red";
-        }
-      });
-    </script>
+      <input
+        type="password"
+        name="password"
+        id="pw"
+        placeholder="비밀번호를 입력해주세요"
+      />
+      <p id="result2"></p>
+      <p>영문자, 숫자, 특수문자 조합으로 8~15자 이내</p>
+      <script>
+        pw.addEventListener("input", (e) => {
+          // console.log(e.target.value);
+          let pw =
+            /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,15}$/;
+          if (pw.test(e.target.value)) {
+            console.log("패스워드 일치");
+            result2.innerHTML = "OK!";
+            result2.style.color = "green";
+          } else {
+            console.log("패스워드 불일치");
+            result2.innerHTML = "NO!";
+            result2.style.color = "red";
+          }
+        });
+      </script>
 
-    <input
-      type="text"
-      name="idreplay"
-      placeholder="비밀번호를 다시 한번 입력해주세요"
-      id="idr"
-    />
-    <p id="result3"></p>
-    <p>위 비밀번호와 동일하게</p>
+      <input
+        type="password"
+        name="idreplay"
+        placeholder="비밀번호를 다시 한번 입력해주세요"
+        id="idr"
+      />
+      <p id="result3"></p>
+      <p>위 비밀번호와 동일하게</p>
 
-    <input
-      type="text"
-      name="username"
-      id="usn"
-      placeholder="이름을 입력해주세요"
-    />
-    <p>한글 2자 이상</p>
-    <p id="result4"></p>
-    <script>
-      usn.addEventListener("input", (e) => {
-        let usn = /^[가-힣]{2,}$/;
-        if (usn.test(e.target.value)) {
-          console.log("pass");
-          result4.innerHTML = "OK!";
-          result4.style.color = "green";
-        } else {
-          console.log("unpass");
-          result4.innerHTML = "NO!";
-          result4.style.color = "red";
-        }
-      });
-    </script>
+      <input
+        type="text"
+        name="username"
+        id="usn"
+        placeholder="이름을 입력해주세요"
+      />
+      <p>한글 2자 이상</p>
+      <p id="result4"></p>
+      <script>
+        usn.addEventListener("input", (e) => {
+          let usn = /^[가-힣]{2,}$/;
+          if (usn.test(e.target.value)) {
+            console.log("pass");
+            result4.innerHTML = "OK!";
+            result4.style.color = "green";
+          } else {
+            console.log("unpass");
+            result4.innerHTML = "NO!";
+            result4.style.color = "red";
+          }
+        });
+      </script>
 
-    <input
-      type="text"
-      name="email"
-      id="form"
-      placeholder="이메일을 입력해주세요"
-    />
-    <p>이메일 형식</p>
-    <p id="result5"></p>
-    <script>
-      form.addEventListener("input", (e) => {
-        // console.log(e.target.value);
-        let form = /^[\w.-]+@[\w.-]+\.[A-Za-z]{2,}$/;
-        if (form.test(e.target.value)) {
-          console.log("이메일 완성");
-          result5.innerHTML = "OK!";
-          result5.style.color = "green";
-        } else {
-          console.log("이메일 불완성");
-          result5.innerHTML = "NO!";
-          result5.style.color = "red";
-        }
-      });
-    </script>
+      <input
+        type="email"
+        name="email"
+        id="form"
+        placeholder="이메일을 입력해주세요"
+      />
+      <p>이메일 형식</p>
+      <p id="result5"></p>
+      <script>
+        form.addEventListener("input", (e) => {
+          // console.log(e.target.value);
+          let form = /^[\w.-]+@[\w.-]+\.[A-Za-z]{2,}$/;
+          if (form.test(e.target.value)) {
+            console.log("이메일 완성");
+            result5.innerHTML = "OK!";
+            result5.style.color = "green";
+          } else {
+            console.log("이메일 불완성");
+            result5.innerHTML = "NO!";
+            result5.style.color = "red";
+          }
+        });
+      </script>
 
-    <input
-      type="text"
-      name="number"
-      id="num"
-      placeholder="전화번호를 입력해주세요"
-    />
-    <p>전화번호 형식</p>
-    <p id="result6"></p>
-    <script>
-      num.addEventListener("input", (e) => {
-        // console.log(e.target.value);
-        let num = /^[\w.-]+@[\w.-]+\.[A-Za-z]{2,}$/;
-        if (num.test(e.target.value)) {
-          console.log("이메일 완성");
-          result6.innerHTML = "OK!";
-          result6.style.color = "green";
-        } else {
-          console.log("이메일 불완성");
-          result6.innerHTML = "NO!";
-          result6.style.color = "red";
-        }
-      });
-    </script>
+      <input
+        type="tel"
+        name="number"
+        id="num"
+        placeholder="전화번호를 입력해주세요"
+      />
+      <p>전화번호 형식</p>
+      <p id="result6"></p>
+      <script>
+        num.addEventListener("input", (e) => {
+          // console.log(e.target.value);
+          let num = /^[\w.-]+@[\w.-]+\.[A-Za-z]{2,}$/;
+          if (num.test(e.target.value)) {
+            console.log("이메일 완성");
+            result6.innerHTML = "OK!";
+            result6.style.color = "green";
+          } else {
+            console.log("이메일 불완성");
+            result6.innerHTML = "NO!";
+            result6.style.color = "red";
+          }
+        });
+      </script>
 
-    <section>
-      <button>회원가입<span></span></button>
-      <button>취소</button>
-    </section>
+      <section>
+        <button value="회원가입" onclick="alert('버튼클릭')">
+          회원가입<span></span>
+        </button>
+        <button>취소</button>
+      </section>
+    </form>
     <!--실습 그림맞추기에서 버튼 클릭 가로 정렬, 입력하는거 보기  -->
     <script src="./실습07_회원가입.js"></script>
   </body>

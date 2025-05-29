@@ -28,9 +28,11 @@ p {
 }
 /* 6. 자식, 자손 선택자 */
 #test1 ul li {
+  /*자손 선택자임. ul 다 선택되고 li다 선택됨*/
   background-color: pink;
 }
 #test1 > ul > li {
+  /*자식 선택자임. test1 바로밑, 자식인 ul확인. ul바로 밑의 자식인 li만 선택됨 */
   color: red;
 }
 /* 7. 속성 선택자 */
@@ -40,15 +42,22 @@ div[name="name1"] {
 }
 div[name~="name1"] {
   /* ~= 단어가 포함되어 있는지 */
+  /* name1이라는 단어가 포함되어 있으면 해당것만 스타일 변경됨
+  html에서 div1이랑 div3에 name1이 있음 이 둘다 노란색 배경이 먹힘*/
   background-color: yellow;
 }
 div[class*="-c"] {
   /*  *= 부분 일치 */
-  color: red;
+  /* 그냥 c가 아니라 -c라는 문자열이 포함된 div만 선택하겠다는 뜻
+     div1, div2, div3 → class가 "div-class"니까 → -c가 포함됨 
+     c-나 cla, class 이런 건 포함돼도 안 잡힘. -c 라는 순서 그대로 들어가야함 */
+  color: rgb(179, 117, 23);
 }
 div[class^="cl"] {
   /* ^= 시작 일치 */
-  background: blue;
+  /* 해당 속성값이 cl로 시작하는 요소만 선택. 
+     즉, class="클래스값" 중에서 "cl"로 시작하는 class만! html에서 div가 해당함 */
+  color: rgb(10, 2, 34);
 }
 div[class|="div"] {
   /* |= 시작 일치 */
@@ -56,7 +65,7 @@ div[class|="div"] {
 }
 div[class$="div"] {
   /* $ = 끝 일치 */
-  background: pink;
+  background: rgb(148, 14, 36);
 }
 /* 8. 형제 선택자 */
 #test2 ~ div {

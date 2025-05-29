@@ -32,9 +32,14 @@
           - https://www.~ ?q=검색내용 적혀있는데 
             url뒤에 보면 검색내용이 q에 담아서 해당 사이트로 보낸다  
             ?(물음표)뒤에를 파라미터라고 함 q는 key라고 보면 됨 q뒤의 내용은 value(값)이라고 보면 됨
-            name을 key라고 보면 됨. (헷갈리지 말기. id가 name임) -->
+            name을 key라고 보면 됨. ex. name에 keyword 쓰면 브라우저 주소에 보임 keyword라고
+            (헷갈리지 말기. id가 name임) -->
       검색 : <input type="text" name="keyword" />
       <input type="submit" value="검색" />
+      <!-- 여긴 value="검색"이니까, 버튼에 "검색"이라는 글자가 바로 보임. -->
+
+      왜냐하면 <input type="submit" />은 화면에 value 값을 텍스트로 보여주는
+      타입이기 때문이야.
     </form>
 
     <h2>로그인</h2>
@@ -49,7 +54,10 @@
       <input type="submit" />
       <input type="reset" />
       <input type="button" value="확인" onclick="alert('버튼 틀릭!')" />
-      <!-- value값에 확인만 넣으면 아무런 효과가 없다. onclick 쓰고 자바스크립트용 함수인 alert를 쓴다 -->
+      <!-- value값에 확인만 넣으면 아무런 효과가 없다. 그냥 버튼에 확인이라고 쓰여있을 뿐이다 onclick 쓰고 자바스크립트용 함수인 alert를 쓴다 -->
+      <!-- value="남자"는 서버로 전송되는 값  value는 화면에 보이게 할 수도 있고,
+          하지만 대부분의 경우 "서버에 보내는 값"으로만 사용돼
+          → **"화면에는 안 보이지만 중요한 데이터"**야. -->
     </form>
 
     <h2>라디오 & 체크박스</h2>
