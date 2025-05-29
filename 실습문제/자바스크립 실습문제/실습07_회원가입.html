@@ -128,16 +128,18 @@
     <p id="result6"></p>
     <script>
       num.addEventListener("input", (e) => {
-              let num = /^010-\d{4}-\d{4}$/
-              console.log("전화번호 통과");
-                result5.innerHTML = "OK!";
-                result5.style.color = "green";
-              } else {
-                console.log("전화번호 미통과");
-                result5.innerHTML = "NO!";
-                result5.style.color = "red";
-              }
-            });
+        // console.log(e.target.value);
+        let num = /^[\w.-]+@[\w.-]+\.[A-Za-z]{2,}$/;
+        if (num.test(e.target.value)) {
+          console.log("이메일 완성");
+          result6.innerHTML = "OK!";
+          result6.style.color = "green";
+        } else {
+          console.log("이메일 불완성");
+          result6.innerHTML = "NO!";
+          result6.style.color = "red";
+        }
+      });
     </script>
 
     <section>
