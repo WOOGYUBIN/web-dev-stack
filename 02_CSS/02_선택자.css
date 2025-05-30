@@ -100,6 +100,7 @@ div[class$="div"] {
   color: white;
 }
 /* input 요소에 포커스가 갔을 때 적용 */
+/* 클릭하면 빈칸안에 색깔 생김 */
 input[type="text"]:focus {
   background: pink;
 }
@@ -120,7 +121,7 @@ button:disabled {
   background: salmon;
 }
 #test3 li:last-child {
-  background: skyblue;
+  color: rgb(230, 35, 22);
 }
 /* nth-child(숫자, odd-홀수, even-짝수) */
 #test3 li:nth-child(even) {
@@ -133,7 +134,7 @@ button:disabled {
   background: hotpink;
 }
 #test3 li:nth-last-of-type(4) {
-  background: seagreen;
+  background: rgb(147, 184, 45);
 }
 
 /* 11. 가상 요소 선택자 */
