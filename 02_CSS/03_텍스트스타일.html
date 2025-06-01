@@ -4,12 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>텍스트스타일</title>
-
+    <!--rel: link 태그와 연결된 리소스 간의 관계(relation)를 정의 
+    stylesheet:연결된 파일이 CSS 스타일시트임 -HTML 문서에 스타일 적용할 때
+      preconnect: 외부 서버에 미리 연결을 시도 -웹 폰트, 외부 리소스를 빠르게 불러올 때
+      preload: 특정 리소스를 미리 로딩-중요한 이미지, 폰트 등을 빠르게 보여주고 싶을 때 사용  -->
     <link rel="stylesheet" href="03_텍스트스타일.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Dokdo&family=Jua&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -33,10 +36,16 @@
     <h1>font-size</h1>
     <p>글자의 크기를 지정하는 속성</p>
     <!-- p#fs$*4 
-    px: 고정크기 / em : 부모 기준 / rem : html 기준  / % : 부모 기준 비율
+    px: 고정크기(절대값. 화면 크기랑 상관없이 딱 정해진 크기, 브라우저 화면이 커도, 작아도, 확대/축소 안 하면 항상 내가 지정한 px값) 
+    em: 부모 요소 기준(부모의 글자 크기를 따라감) 
+    rem: html 기준(html 태그의 font-size 기준으로 계산)   
+    %: 부모 기준 비율(부모 요소의 크기 대비 비율)
     지금 밑에 보면 font-size: 30px 이게 부모값임 
     -->
     <p id="fs1">고정크기 px</p>
+    <!-- <div> 요소에 직접 글자 크기 30px을 지정한 거고,
+     이 <div> 안에 있는 자식 요소들은 이걸 "부모 요소의 글자 크기"로 인식함.
+      <div>가 엄마, <p>가 자식  -->
     <div style="font-size: 30px">
       <p id="fs2">가변크기 em</p>
       <p id="fs3">가변크기 rem</p>

@@ -15,8 +15,11 @@
 }
 
 #ff4 {
-  font-family: "East Sea Dokdo", sans-serif;
+  font-family: "Dokdo", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
+
 /* font-weight */
 #fw1 {
   font-weight: bold;
@@ -28,20 +31,24 @@
   font-weight: 100;
 }
 /* font-size */
+/* 1rem = 16px */
 #fs1 {
   font-size: 32px;
 }
 #fs2 {
-  /*부모가 30px 라면 -> 30 x 2 =60px */
+  /* 부모 요소의 글자 크기 × 2배 */
+  /*부모가 30px-> 30 x 2 =60px */
   font-size: 2em;
 }
 #fs3 {
-  /* 기본 크기 16px x 2 = 32px */
+  /* 기본 크기 16px(브라우저 기본값) x 2 = 32px */
   font-size: 2rem;
 }
 #fs4 {
-  /* 부모 크기 30px x 2 = 60px */
+  /*font-size가 200%라면 부모 크기 30px x 2 = 60px */
   font-size: 200%;
+  /* 만약에 font-size가 100%면 부모크기 30px x 1 = 30px
+  font-size가 50%라면 부모크기 30px x 0.5 = 15px*/
 }
 /* font-style */
 #fs5 {
@@ -58,8 +65,12 @@
 }
 /* font */
 #font1 {
-  /* font-style font-variant font-weight font-size/line-height font-family 
+  /* font-style font-variant font-weight font-size/line-height(줄 간격) font-family(글꼴 이름)
   순서대로 기억해야 함 그리고 순서로 써야함*/
+  /* 줄 간격(line-height) = 한 줄의 글자가 차지하는 전체 높이 */
+  /* 32px/2면 32px가 폰트 사이즈이고 줄 가격이 2배라는 뜻 */
+  /* 가변에서는 계산하기 쉬운건 rem (그래서 주로 이거를 씀) em이나 %는 부모 태그에 따라 상대적이다
+     그에 비해 rem은 브라우저 기준 16px = 1rem */
   font: italic small-caps bold 32px/2 "East Sea Dokdo";
 }
 #font2 {
@@ -82,6 +93,7 @@
 }
 #c-hsl {
   /* 색상환(H, 0~360) 채도(S, 0~100%) 밝기(L,0~100%) 투명도(A, 0~1)*/
+  /* hue: 색상 / saturation 채도(선명함) / Lightness(명도)*/
   color: hsl(200, 50%, 50%, 0.2);
 }
 /* text-decoration */
