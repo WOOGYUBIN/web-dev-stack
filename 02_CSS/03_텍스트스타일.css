@@ -134,8 +134,8 @@
   text-shadow: 0px 0px 10px yellowgreen;
 }
 #ts3 {
-  text-shadow: 0px 0px 4px gray, 0px -5px 4px yellow, 0px -10px 8px orange,
-    0px -15px 15px orangered, 0px -22px 20px red;
+  text-shadow: 0px 0px 4px rgb(10, 155, 111), 0px -5px 4px yellow,
+    0px -10px 8px orange, 0px -15px 15px rgb(77, 43, 199), 0px -22px 20px red;
 }
 /* white-space */
 #whs {
@@ -166,14 +166,18 @@
   text-indent: 10px;
 }
 #lh {
-  line-height: 2;
+  line-height: 2; /*여기서 2는 해당 기준 표준의 2배 */
 }
 /* text-overflow */
 #to {
   background: beige;
   width: 500px;
+  /* nowrap: 줄바꿈하지 않음*/
+  /* HTML이나 CSS에서 기본적으로 텍스트는 공백이나 줄이 길어지면 자동으로 줄 바꿈을 해줘.
+   하지만 white-space: nowrap;을 쓰면 그 줄이 아무리 길어져도 한 줄로 계속 이어서 출력돼. */
   white-space: nowrap;
   overflow: hidden;
+  /*  텍스트가 박스 너비보다 길어서 넘칠 때, 그 넘치는 부분을 잘라내고 말줄임표(…)로 표시해줌 */
   text-overflow: ellipsis;
 }
 /* list-style */
