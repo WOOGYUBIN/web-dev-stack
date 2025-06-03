@@ -1,13 +1,16 @@
 /* width(가로), height(높이) */
-/* px : 고정 크기 / % : 부모 기준 비율 / vw, vh : 뷰포트 너비, 높이 기준 비율 */
+/* px : 고정 크기 / % : 부모 기준 비율 / vw, vh : 뷰포트(viewport) 너비, 높이 기준 비율 */
 #fixed-size {
   width: 300px;
   height: 150px;
   background-color: lightblue;
 }
 #variable-size {
-  width: 80vw;
-  height: 100vh;
+  width: 80vw; /*vw(Viewport Width)-현재 화면(브라우저) 너비(viewport width)의 1%를 의미함.  */
+  /* 80vw는 현재 화면 너비의 80%만큼 너비를 설정하겠다는 뜻임. 만약 화면 전체 너비가 1000px이라면 → 80vw = 800px
+화면을 줄이면 자동으로 같이 줄어들어 (반응형 디자인에서 유용) 
+참고로 width: 80% 이렇게 할 수 있는데 이거는 부모 박스 너비의 80% */
+  height: 100vh; /*vh(Viewport Height)-화면 높이 기준 1% */
   background-color: lightgreen;
 }
 /* padding, margin */
@@ -17,34 +20,37 @@
   margin-bottom: 10px;
 }
 #padding1 {
-  padding: 20px;
+  padding: 20px; /*content기준에서부터 양옆,위아래 사방으로 너비가 20임*/
 }
 #padding2 {
-  padding-top: 30px;
+  padding-top: 30px; /*content기준에서부터 위로 너비가 30임*/
   padding-left: 10px;
   padding-right: 20px;
   padding-bottom: 40px;
-  padding: 30px 20px 40px 10px;
+  padding: 30px 20px 40px 10px; /*순서는 시계방향으로 표기 top right bottom left*/
   /* padding-top: 30px;
   padding-left: 10px;
   padding-right: 20px;
-  padding-bottom: 40px; 이렇게 쓴거랑 padding: 30px 20px 40px 10px;
-  이 순서로 쓴거랑 똑같음
-  순서는 시계방향으로 표기 top right bottom left */
+  padding-bottom: 40px; 
+  이렇게 쓴거랑 padding: 30px 20px 40px 10px; 이 순서로 쓴거랑 똑같음 */
+
+  /*top right bottom left */
   padding: 30px 20px 40px 10px;
-  /* top right/ left bottom */
-  padding: 30px 20px 40px 20px;
-  /* top/bottom right/left */
+
+  /* 값이 같을 때 묶어주기 */
+  /* top right/left bottom  (아래에는 오른쪽, 왼쪽 둘다 20px임을 뜻함)*/
+  padding: 30px 20px 40px;
+  /* top/bottom right/left (아래에는 위아래가 30px, 좌우가 20px임을 뜻함)*/
   padding: 30px 20px;
 }
 
 #margin1 {
-  margin: 20px;
+  margin: 20px; /*박스 외부와 다른 요소 사이의 공간이 전부 20픽셀 생긴다는 뜻(요소 바깥쪽 여백을 네 방향 모두 20px로 설정하겠다는 뜻)*/
 }
 #margin2 {
-  margin: 5px 15px 10px 30px;
+  margin: 5px 15px 10px 30px; /* Top → Right → Bottom → Left */
   /* 뭐가 되었든 위에서 주든 아래에서 주든 최대값만 본다
-  ex) 위에서 20px을 주고 아래에서 5px를 주면 25px가 되어야 하는데 최대값만 보기 때문에 20px가 됨 */
+  ex) 위에서 20px을 주고 아래에서 5px를 주면 25px가 되어야 하는데 최대값만 보기 때문에 요소와 요소사이는 20px가 됨 */
 }
 .collapse-box {
   background-color: lightcoral;
@@ -60,19 +66,20 @@
 .center-box {
   width: 200px;
   height: 100px;
-  line-height: 100px;
   background: lightseagreen;
   color: white;
   text-align: center;
-  line-height: 100px;
-  margin: auto;
+  line-height: 100px; /*줄 간격: 100px임 
+  ex) font-size: 20px;  line-height: 100px; 라면 ==> 글자 위40px + 글자(20px) + 아래 40px처럼 생김
+  즉, 이 줄은 한 줄을 감싸는 박스가 100px짜리라는 거야.*/
+  margin: auto; /* 남는 공간을 자동으로 양쪽에 동일하게 분배하겠다는 뜻 즉 가운데로 박스가 정렬됨*/
 }
 .border {
   width: 100px;
   height: 100px;
   margin: 10px;
-  background: #eee;
-  display: inline-block;
+  background: #ebbebe;
+  display: inline-block; /*한 줄에 나란히 배치되면서도, 크기 조절(margin, padding, width, height) 이 자유로운 박스를 만든다.*/
 }
 #border1 {
   /* solid : 실선 */
