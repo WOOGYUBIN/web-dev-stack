@@ -161,7 +161,7 @@
   position: relative;
   width: 400px;
   height: 200px;
-  background: #f4f4f4;
+  background: #f4f4f4; /*색배합 조합 사이트: color hunt */
   overflow: auto;
 }
 .position-box {

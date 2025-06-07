@@ -84,7 +84,7 @@
 }
 #c-16 {
   /* #RRGGBB */
-  color: #dd882e;
+  color: #dd882e; /*색배합 조합 사이트: color hunt -> 16진수에 많이 쓰임*/
 }
 #c-rgb {
   /* Red(0~255) Green(0~225), Blue(0~225), Alpha(투명도, 0~1)  */
