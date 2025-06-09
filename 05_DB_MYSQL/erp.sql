@@ -39,3 +39,11 @@ DB 모델링
 		- BLOB : 이진 데이터를 저장하는데 사용. 이미지나 동영상과 같은 이진 파일
         --> 실제로는 이미지나 동영상은 따로 관리 (URL만 문자형으로 저장) 
 */
+CREATE TABLE USERS_INFO (
+USER_NAME VARCHAR(20),
+USER_AGE VARCHAR(5),
+GENDER VARCHAR(5),
+PHONE VARCHAR(10)
+ADRRESS VARCHAR(20),
+
+);
